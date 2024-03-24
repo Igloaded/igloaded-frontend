@@ -1,0 +1,842 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html.homePage {
+	font-size: 100%;
+	font-family: 'Poppins', sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.main {
+	box-sizing: border-box;
+	background-color: var(--primary-cl);
+	width: 100%;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+
+	.container {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		width: 100%;
+		padding: 0 5rem;
+		min-height: 10vh;
+
+		h3 {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: var(--light-cl);
+			margin-bottom: 0.2rem;
+		}
+
+		p {
+			font-size: 1.1rem;
+			font-weight: 400;
+			color: rgb(193, 193, 193);
+		}
+	}
+
+	.mainHolder {
+		width: 100%;
+		min-height: 80vh;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+
+		> .left {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 65%;
+			flex-direction: column;
+			border-right: 1px solid #ffffff64;
+
+			> .cardHolder {
+				display: flex;
+				justify-content: stretch;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 1.5rem;
+				width: 100%;
+				padding: 1rem 5rem;
+
+				> .card {
+					background-color: var(--primary-cl);
+					display: flex;
+					flex: 2 1 30%;
+					flex-direction: column;
+					min-height: 25%;
+					width: 30%;
+					border: 1px solid #ffffff66;
+					border-radius: 0.75rem;
+					overflow: hidden;
+					transition: all 0.15s ease-in-out;
+
+					&:hover {
+						cursor: pointer;
+						border: 1px solid var(--accent-cl);
+						transform: scale(1.02);
+					}
+
+					> .coinInfo {
+						width: 100%;
+						border-top-right-radius: 0.75rem;
+						border-top-left-radius: 0.75rem;
+						display: flex;
+						align-items: center;
+						min-height: 4rem;
+						padding: 0 1.5rem;
+						border-bottom: 1px solid
+							rgba(255, 255, 255, 0.236);
+						background-color: var(--accent-cl);
+
+						> svg {
+							font-size: 2.25rem;
+							color: var(--light-cl);
+						}
+
+						> h3 {
+							font-size: 1rem;
+							font-weight: 500;
+							color: var(--light-cl);
+							margin-left: 0.5rem;
+						}
+
+						> .checkIcon {
+							font-size: 1.5rem;
+							color: var(--light-cl);
+							margin-left: auto;
+						}
+					}
+
+					> .amount {
+						width: 100%;
+						height: 100%;
+						padding: 2rem 2rem;
+						background-color: var(--light-cl);
+
+						> h3 {
+							font-size: 1.5rem;
+							font-weight: 600;
+							color: var(--primary-cl);
+
+							> span {
+								font-size: 1rem;
+								font-weight: 500;
+								color: rgb(148, 147, 147);
+							}
+						}
+					}
+				}
+			}
+
+			> .infoWrapper {
+				padding: 1rem 5rem;
+				width: 100%;
+
+				.note {
+					color: white;
+					font-size: 0.9rem;
+					font-weight: 300;
+					padding: 0 0.5rem;
+				}
+
+				.infoBgWrapper {
+					background-color: #ffffff;
+					padding: 1rem;
+					margin: 5rem 0 0 0;
+					border-radius: 0.75rem;
+
+					h4 {
+						color: #222222;
+						font-weight: 600;
+						font-size: 1.15rem;
+						padding: 0 0.5rem;
+						text-align: right;
+					}
+
+					> .info {
+						font-size: 1rem;
+						padding: 0 0.5rem;
+						text-align: right;
+						color: #232323;
+					}
+				}
+			}
+		}
+
+		> .spacer {
+			background-color: #ffffff64;
+			height: 80vh;
+			width: 1px;
+		}
+
+		> .TotalContainer {
+			width: 35%;
+			min-height: 80vh;
+			padding: 1rem;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+
+			> h3 {
+				width: 100%;
+				color: white;
+				font-size: 1.25rem;
+				padding: 0 0 0.75rem 2rem;
+			}
+
+			> .promocodeSection {
+				width: 100%;
+				border-radius: 1rem;
+				padding: 1rem 1.5rem;
+				margin: 0.75rem 0;
+				display: flex;
+				align-items: flex-start;
+				justify-content: center;
+				flex-direction: column;
+
+				> p {
+					color: white;
+					font-size: 1.15rem;
+					margin: 0 0 0 0.5rem;
+				}
+
+				> .codeInputWrapper {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					margin: 0.75rem 0 0.5rem 0;
+					width: 100%;
+					gap: 1rem;
+
+					> input {
+						background-color: transparent;
+						border: 1px solid #ffffff86;
+						border-radius: 2rem;
+						padding: 1rem 1.25rem;
+						outline: none;
+						width: 70%;
+						font-size: 1.15rem;
+						color: white;
+
+						&::placeholder {
+							color: #ffffff8d;
+							font-size: 1.25rem;
+						}
+
+						&:focus {
+							border: 1px solid white;
+						}
+					}
+
+					> .codeSubmitBtn {
+						background-color: var(--accent-cl);
+						width: 30%;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: white;
+						font-family: 'Poppins', sans-serif;
+						font-size: 1.15rem;
+						border-radius: 5rem;
+						padding: 0.75rem;
+						border: 1px solid transparent;
+						transition: all 0.15s ease-in-out;
+
+						&:hover {
+							cursor: pointer;
+							border: 1px solid var(--accent-cl);
+							background-color: transparent;
+						}
+					}
+
+					> .codeSubmitBtnDisabled {
+						background-color: #6762ff7b;
+						width: 30%;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: white;
+						font-family: 'Poppins', sans-serif;
+						font-size: 1.15rem;
+						border-radius: 5rem;
+						padding: 0.75rem;
+						border: 1px solid transparent;
+						transition: all 0.15s ease-in-out;
+
+						&:hover {
+							cursor: not-allowed;
+						}
+					}
+				}
+
+				> .appliedDescription {
+					color: white;
+					font-size: 0.85rem;
+					font-style: italic;
+					margin: 0rem 0 0 0.75rem;
+				}
+			}
+
+			> .productDetailWrapper {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				.productInfo {
+					width: 90%;
+					background-color: #fffafa;
+					border-radius: 1.5rem;
+					min-height: 4rem;
+					padding: 1.5rem;
+					position: relative;
+
+					> .cancelBtn {
+						position: absolute;
+						top: 1rem;
+						right: 1rem;
+						transition: all 0.15s ease-in-out;
+
+						&:hover {
+							cursor: pointer;
+							> svg {
+								color: #ff5c5c;
+							}
+						}
+
+						> svg {
+							font-size: 1.5rem;
+							transition: all 0.15s ease-in-out;
+						}
+					}
+
+					> h3 {
+						font-size: 1.15rem;
+					}
+
+					> p {
+						font-size: 1rem;
+						color: grey;
+					}
+				}
+
+				> .priceDetails {
+					width: 90%;
+					background-color: #fffafa;
+					border-radius: 1.5rem;
+					min-height: 4rem;
+					padding: 1.5rem;
+					margin: 1rem 0;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+
+					.left {
+						width: 50%;
+
+						> .boldText {
+							font-size: 1.15rem;
+							font-weight: 600;
+							margin: 1rem 0;
+						}
+					}
+
+					.right {
+						width: 50%;
+						text-align: right;
+
+						> .boldText {
+							font-size: 1.15rem;
+							font-weight: 600;
+							margin: 1rem 0;
+						}
+					}
+				}
+
+				> .PaymentBtn {
+					width: 90%;
+					background-color: var(--accent-cl);
+					border-radius: 1.5rem;
+					min-height: 3rem;
+					padding: 1rem;
+					margin: 1rem 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border: 1px solid transparent;
+					gap: 1rem;
+					transition: all 0.15s ease-in-out;
+
+					> p {
+						color: white;
+						font-size: 1.15rem;
+						font-weight: 500;
+					}
+
+					> svg {
+						font-size: 1.5rem;
+						color: white;
+					}
+
+					&:hover {
+						cursor: pointer;
+						background-color: transparent;
+						border: 1px solid var(--accent-cl);
+					}
+				}
+
+				.badgeHolder {
+					width: 90%;
+					display: flex;
+					align-items: flex-start;
+					justify-content: center;
+
+					> img {
+						width: 30%;
+						border-radius: 1rem;
+						margin: 1rem 0 0 0;
+					}
+				}
+			}
+
+			> .emptyProduct {
+				width: 90%;
+				height: 40vh;
+				background-color: #ffffff1a;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				border-radius: 1rem;
+				gap: 1rem;
+
+				svg {
+					color: white;
+					font-size: 2rem;
+				}
+
+				> p {
+					font-size: 1rem;
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 200px) and (max-width: 1024px) {
+	html.homePage {
+		font-size: 70%;
+	}
+	.main {
+		box-sizing: border-box;
+		background-color: var(--primary-cl);
+		width: 100%;
+		min-height: 100vh;
+		margin: 0;
+		padding: 0;
+
+		.container {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			width: 100%;
+			padding: 0 2rem;
+			min-height: 10vh;
+
+			h3 {
+				font-size: 1.5rem;
+				font-weight: 700;
+				color: var(--light-cl);
+				margin-bottom: 0.2rem;
+			}
+
+			p {
+				font-size: 1.1rem;
+				font-weight: 400;
+				color: rgb(193, 193, 193);
+			}
+		}
+
+		.mainHolder {
+			width: 100%;
+			min-height: 80vh;
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
+			flex-direction: column;
+
+			> .left {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				flex-direction: column;
+				border-right: 1px solid #ffffff64;
+
+				> .cardHolder {
+					display: flex;
+					flex-wrap: wrap;
+					align-items: stretch;
+					gap: 1.5rem;
+					width: 100%;
+					padding: 1rem 2rem;
+
+					> .card {
+						background-color: var(--primary-cl);
+						display: flex;
+						flex: 2 1 35%;
+						flex-direction: column;
+						min-height: 25%;
+						width: 30%;
+						border: 1px solid #ffffff66;
+						border-radius: 0.75rem;
+						overflow: hidden;
+						transition: all 0.15s ease-in-out;
+
+						&:hover {
+							cursor: pointer;
+							border: 1px solid var(--accent-cl);
+							transform: scale(1.02);
+						}
+
+						> .coinInfo {
+							width: 100%;
+							border-top-right-radius: 0.75rem;
+							border-top-left-radius: 0.75rem;
+							display: flex;
+							align-items: center;
+							min-height: 4rem;
+							padding: 0 1.5rem;
+							border-bottom: 1px solid
+								rgba(255, 255, 255, 0.236);
+							background-color: var(--accent-cl);
+
+							> svg {
+								font-size: 2.25rem;
+								color: var(--light-cl);
+							}
+
+							> h3 {
+								font-size: 1rem;
+								font-weight: 500;
+								color: var(--light-cl);
+								margin-left: 0.5rem;
+							}
+
+							> .checkIcon {
+								font-size: 1.5rem;
+								color: var(--light-cl);
+								margin-left: auto;
+							}
+						}
+
+						> .amount {
+							width: 100%;
+							height: 100%;
+							padding: 2rem 2rem;
+							background-color: var(--light-cl);
+
+							> h3 {
+								font-size: 1.5rem;
+								font-weight: 600;
+								color: var(--primary-cl);
+
+								> span {
+									font-size: 1rem;
+									font-weight: 500;
+									color: rgb(148, 147, 147);
+								}
+							}
+						}
+					}
+				}
+
+				> .infoWrapper {
+					padding: 1rem 2rem;
+					width: 100%;
+
+					.note {
+						color: white;
+						font-size: 1.15rem;
+						font-weight: 300;
+						padding: 0 0.5rem;
+					}
+
+					.infoBgWrapper {
+						background-color: #ffffff;
+						padding: 1rem;
+						margin: 2rem 0 0 0;
+						border-radius: 0.75rem;
+
+						h4 {
+							color: #222222;
+							font-weight: 600;
+							font-size: 1.15rem;
+							padding: 0 0.5rem;
+							text-align: right;
+						}
+
+						> .info {
+							font-size: 1rem;
+							padding: 0 0.5rem;
+							text-align: right;
+							color: #232323;
+						}
+					}
+				}
+			}
+
+			> .TotalContainer {
+				width: 100%;
+				min-height: 80vh;
+				padding: 1rem;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+
+				> h3 {
+					width: 100%;
+					color: white;
+					font-size: 1.25rem;
+					padding: 0 0 0.75rem 2rem;
+				}
+
+				> .promocodeSection {
+					width: 100%;
+					border-radius: 1rem;
+					padding: 1rem 1.5rem;
+					margin: 0.75rem 0;
+					display: flex;
+					align-items: flex-start;
+					justify-content: center;
+					flex-direction: column;
+
+					> p {
+						color: white;
+						font-size: 1.15rem;
+						margin: 0 0 0 0.5rem;
+					}
+
+					> .codeInputWrapper {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						margin: 0.75rem 0;
+						width: 100%;
+						gap: 1rem;
+
+						> input {
+							background-color: transparent;
+							border: 1px solid #ffffff86;
+							border-radius: 2rem;
+							padding: 1rem 1.25rem;
+							outline: none;
+							width: 70%;
+							font-size: 1.15rem;
+							color: white;
+
+							&::placeholder {
+								color: #ffffff8d;
+								font-size: 1.25rem;
+							}
+
+							&:focus {
+								border: 1px solid white;
+							}
+						}
+
+						> .codeSubmitBtn {
+							background-color: var(--accent-cl);
+							width: 30%;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							color: white;
+							font-family: 'Poppins', sans-serif;
+							font-size: 1.15rem;
+							border-radius: 5rem;
+							padding: 0.75rem;
+							border: 1px solid transparent;
+							transition: all 0.15s ease-in-out;
+
+							&:hover {
+								cursor: pointer;
+								border: 1px solid var(--accent-cl);
+								background-color: transparent;
+							}
+						}
+
+						> .codeSubmitBtnDisabled {
+							background-color: #6762ff7b;
+							width: 30%;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							color: white;
+							font-family: 'Poppins', sans-serif;
+							font-size: 1.15rem;
+							border-radius: 5rem;
+							padding: 0.75rem;
+							border: 1px solid transparent;
+							transition: all 0.15s ease-in-out;
+
+							&:hover {
+								cursor: pointer;
+								border: 1px solid var(--accent-cl);
+								background-color: transparent;
+							}
+						}
+					}
+				}
+
+				> .productDetailWrapper {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-direction: column;
+					.productInfo {
+						width: 90%;
+						background-color: #fffafa;
+						border-radius: 1.5rem;
+						min-height: 4rem;
+						padding: 1.5rem;
+						position: relative;
+
+						> .cancelBtn {
+							position: absolute;
+							top: 1rem;
+							right: 1rem;
+							transition: all 0.15s ease-in-out;
+
+							&:hover {
+								cursor: pointer;
+								> svg {
+									color: #ff5c5c;
+								}
+							}
+
+							> svg {
+								font-size: 1.5rem;
+								transition: all 0.15s ease-in-out;
+							}
+						}
+
+						> h3 {
+							font-size: 1.15rem;
+						}
+
+						> p {
+							font-size: 1rem;
+							color: grey;
+						}
+					}
+
+					> .priceDetails {
+						width: 90%;
+						background-color: #fffafa;
+						border-radius: 1.5rem;
+						min-height: 4rem;
+						padding: 1.5rem;
+						margin: 1rem 0;
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+
+						.left {
+							width: 50%;
+
+							> .boldText {
+								font-size: 1.15rem;
+								font-weight: 600;
+								margin: 1rem 0;
+							}
+						}
+
+						.right {
+							width: 50%;
+							text-align: right;
+
+							> .boldText {
+								font-size: 1.15rem;
+								font-weight: 600;
+								margin: 1rem 0;
+							}
+						}
+					}
+
+					> .PaymentBtn {
+						width: 90%;
+						background-color: var(--accent-cl);
+						border-radius: 1.5rem;
+						min-height: 3rem;
+						padding: 1rem;
+						margin: 1rem 0;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						border: 1px solid transparent;
+						gap: 1rem;
+						transition: all 0.15s ease-in-out;
+
+						> p {
+							color: white;
+							font-size: 1.15rem;
+							font-weight: 500;
+						}
+
+						> svg {
+							font-size: 1.5rem;
+							color: white;
+						}
+
+						&:hover {
+							cursor: pointer;
+							background-color: transparent;
+							border: 1px solid var(--accent-cl);
+						}
+					}
+
+					.badgeHolder {
+						width: 90%;
+						display: flex;
+						align-items: flex-start;
+						justify-content: center;
+
+						> img {
+							width: 30%;
+							margin: 1rem 0 0 0;
+						}
+					}
+				}
+
+				> .emptyProduct {
+					width: 95%;
+					height: 40vh;
+					background-color: #ffffff1a;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-direction: column;
+					border-radius: 1rem;
+					gap: 1rem;
+
+					svg {
+						color: white;
+						font-size: 2rem;
+					}
+
+					> p {
+						font-size: 1rem;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}

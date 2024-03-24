@@ -1,0 +1,904 @@
+@import url('https://fonts.cdnfonts.com/css/metropolis-2');
+
+html.homePage {
+	font-size: 100%;
+}
+.wrapper {
+	height: 100vh;
+	max-height: 100vh;
+	overflow: hidden;
+	display: flex;
+	width: 100%;
+	box-sizing: border-box;
+	font-size: 100%;
+	background-color: var(--primary-cl);
+	position: relative;
+
+	> .backHome {
+		position: absolute;
+		top: 2rem;
+		left: 2rem;
+		font-size: 1.5rem;
+		cursor: pointer;
+		background-color: white;
+		z-index: 100;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+		border-radius: 100%;
+		aspect-ratio: 1;
+		transition: all 0.15s ease-in-out;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+
+		> svg {
+			font-size: 1.5rem;
+			color: var(--primary-cl);
+		}
+	}
+
+	a {
+		text-decoration: none;
+		font-size: 1.15rem;
+	}
+
+	.left {
+		width: 50%;
+		height: 100%;
+
+		.videoContainer {
+			position: relative;
+			width: 100%;
+			height: 100%;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(
+					to right,
+					rgba(0, 0, 0, 0) 25%,
+					var(--primary-cl) 100%
+				);
+				pointer-events: none;
+			}
+
+			video {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	.right {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+		height: 100%;
+		padding: 0 5%;
+
+		.logo {
+			height: 10vh;
+			width: 100%;
+			margin: 5rem 0 5rem 0;
+
+			> img {
+				width: 15rem;
+			}
+		}
+
+		.main {
+			width: 70%;
+			color: white;
+			padding: 2rem;
+			color: #f1f1f1;
+			background: rgba(103, 98, 255, 0.1);
+			box-shadow: 0 8px 32px 0
+				rgba(31, 38, 135, 0.37);
+			backdrop-filter: blur(2px);
+			-webkit-backdrop-filter: blur(2px);
+			border-radius: 10px;
+			border: 1px solid rgba(255, 255, 255, 0.18);
+
+			h2 {
+				font-size: 2.5rem;
+				font-weight: 600;
+				margin: 0 0 1rem 0;
+				font-family: 'Metropolis', sans-serif;
+			}
+
+			p {
+				font-weight: 400;
+				margin: 0 0 2.5rem 0;
+			}
+
+			input[type='email'] {
+				margin: 1rem 0 0 0;
+			}
+
+			input {
+				width: 100%;
+				padding: 1rem;
+				border-radius: 0.3rem;
+				border: 1px solid #d3d3d375;
+				background-color: transparent;
+				font-size: 1rem;
+				color: white;
+
+				&:focus {
+					border: 1px solid transparent;
+					outline: 1px solid var(--accent-cl);
+				}
+
+				&::placeholder {
+					font-size: 1rem;
+					color: rgb(255, 255, 255);
+				}
+			}
+
+			.submitbtn {
+				width: 100%;
+				margin: 1rem 0 0 0;
+				padding: 1rem 10%;
+				border-radius: 0.3rem;
+				background-color: var(--accent-cl);
+				border: 1px solid transparent;
+				color: #fff;
+				font-weight: 500;
+				font-size: 1.1rem;
+				transition: all 0.15s ease-in-out;
+				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0.5rem;
+
+				&:hover {
+					background-color: var(--primary-cl);
+					cursor: pointer;
+					border: 1px solid grey;
+					box-shadow: 7px 5px 60px -14px var(--accent-cl);
+				}
+
+				&:active {
+					transform: scale(0.97);
+					box-shadow: 7px 5px 56px -10px var(--accent-cl);
+				}
+			}
+
+			.signUplabel {
+				margin: 2rem 0 0.5rem 0;
+
+				a {
+					cursor: pointer;
+					font-weight: 500;
+					color: var(--accent-cl);
+				}
+			}
+
+			.forgetpassLabel {
+				cursor: pointer;
+				font-weight: 500;
+				color: var(--accent-cl);
+			}
+		}
+
+		.verificationWrapper {
+			display: flex;
+			flex-direction: column;
+			color: white;
+			padding: 2rem;
+			color: #f1f1f1;
+			background: rgba(103, 98, 255, 0.1);
+			box-shadow: 0 8px 32px 0
+				rgba(31, 38, 135, 0.37);
+			backdrop-filter: blur(2px);
+			-webkit-backdrop-filter: blur(2px);
+			border-radius: 10px;
+			border: 1px solid rgba(255, 255, 255, 0.18);
+
+			h2 {
+				font-size: 2.5rem;
+			}
+
+			// p {
+			// 	font-size: 1rem;
+			// 	margin: 0.5rem 0 0 0;
+			// 	color: #e4e4e4;
+			// }
+
+			.ResendOtplabel {
+				margin: 2rem 0 0 0;
+
+				.mailLabel {
+					font-weight: 500;
+					color: var(--accent-cl);
+					cursor: pointer;
+				}
+			}
+
+			.otpWrapper {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				margin: 2rem 0 0 0;
+
+				input::-webkit-outer-spin-button,
+				input::-webkit-inner-spin-button {
+					-webkit-appearance: none;
+					margin: 0;
+				}
+
+				input[type='number'] {
+					-moz-appearance: textfield;
+					appearance: textfield;
+				}
+
+				input {
+					font-size: 2rem;
+					text-align: center;
+					width: 10%;
+					aspect-ratio: 1;
+					border: 1px solid #d3d3d375;
+					background-color: transparent;
+					caret-color: white;
+					color: white;
+
+					&::placeholder {
+						color: #afafaf;
+					}
+
+					&:focus {
+						border: none;
+						outline: 1px solid var(--accent-cl);
+					}
+				}
+			}
+			.submitbtn {
+				width: fit-content;
+				margin: 2rem 0 0 0;
+				padding: 1rem 10%;
+				border-radius: 0.3rem;
+				background-color: var(--accent-cl);
+				border: 1px solid transparent;
+				color: #fff;
+				font-weight: 500;
+				font-size: 1.1rem;
+				transition: all 0.15s ease-in-out;
+
+				&:hover {
+					background-color: var(--primary-cl);
+					cursor: pointer;
+					border: 1px solid grey;
+					box-shadow: 7px 5px 60px -14px var(--accent-cl);
+				}
+
+				&:active {
+					transform: scale(0.97);
+					box-shadow: 7px 5px 56px -10px var(--accent-cl);
+				}
+			}
+		}
+
+		.successWrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: #fff;
+			padding: 2rem;
+			height: 55%;
+			background: rgba(103, 98, 255, 0.1);
+			box-shadow: 0 8px 32px 0
+				rgba(31, 38, 135, 0.37);
+			backdrop-filter: blur(2px);
+			-webkit-backdrop-filter: blur(2px);
+			border-radius: 10px;
+			border: 1px solid rgba(255, 255, 255, 0.18);
+
+			.animationContainer {
+				height: 30%;
+				width: 100%;
+				margin: 3rem 0;
+
+				> img {
+					height: 100%;
+					width: 100%;
+					object-fit: contain;
+				}
+			}
+
+			h2 {
+				font-size: 1.5rem;
+			}
+
+			p {
+				font-size: 1rem;
+				margin: 0.5rem 0 0 0;
+			}
+
+			.submitbtn {
+				width: fit-content;
+				margin: 2rem 0 0 0;
+				padding: 1rem 10%;
+				border-radius: 0.3rem;
+				background-color: var(--accent-cl);
+				border: 1px solid transparent;
+				color: #fff;
+				font-weight: 500;
+				font-size: 1rem;
+				transition: all 0.15s ease-in-out;
+
+				&:hover {
+					background-color: var(--primary-cl);
+					cursor: pointer;
+					border: 1px solid grey;
+					box-shadow: 7px 5px 60px -14px var(--accent-cl);
+				}
+
+				&:active {
+					transform: scale(0.97);
+					box-shadow: 7px 5px 56px -10px var(--accent-cl);
+				}
+			}
+		}
+
+		.changePassWrapper {
+			width: 75%;
+			padding: 2rem;
+			background: rgba(103, 98, 255, 0.1);
+			box-shadow: 0 8px 32px 0
+				rgba(31, 38, 135, 0.37);
+			backdrop-filter: blur(2px);
+			-webkit-backdrop-filter: blur(2px);
+			border-radius: 10px;
+			border: 1px solid rgba(255, 255, 255, 0.18);
+			color: white;
+
+			h2 {
+				font-size: 2rem;
+				margin-bottom: 2rem;
+			}
+
+			input {
+				width: 100%;
+				padding: 1rem;
+				border-radius: 0.3rem;
+				border: 1px solid #d3d3d375;
+				background-color: transparent;
+				font-size: 1rem;
+				color: white;
+
+				&::placeholder {
+					font-size: 1rem;
+					color: rgb(255, 255, 255);
+				}
+			}
+
+			.passwordWrapper {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+				margin: 1rem 0 0 0;
+				border: 1px solid #d3d3d375;
+				background-color: transparent;
+				border-radius: 0.3rem;
+				padding: 0 1rem 0 0;
+
+				&:focus-within {
+					border: 1px solid var(--accent-cl);
+				}
+
+				> input {
+					border: 1px solid transparent;
+					&:focus {
+						outline: 1px solid transparent;
+					}
+				}
+
+				svg {
+					font-size: 1.5rem;
+					color: #ffffff;
+					margin: 0 0 0 1rem;
+
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+
+			.submitbtn {
+				width: fit-content;
+				margin: 2rem 0 0 0;
+				padding: 0.75rem 10%;
+				border-radius: 0.3rem;
+				background-color: var(--accent-cl);
+				border: 1px solid transparent;
+				color: #fff;
+				font-weight: 500;
+				font-size: 1rem;
+				transition: all 0.15s ease-in-out;
+
+				&:hover {
+					background-color: var(--primary-cl);
+					cursor: pointer;
+					border: 1px solid grey;
+					box-shadow: 7px 5px 60px -14px var(--accent-cl);
+				}
+
+				&:active {
+					transform: scale(0.97);
+					box-shadow: 7px 5px 56px -10px var(--accent-cl);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 200px) and (max-width: 999px) {
+	html.homePage {
+		font-size: 85%;
+	}
+	.wrapper {
+		height: 100vh;
+		max-height: 100vh;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		box-sizing: border-box;
+		font-size: 100%;
+		background-color: var(--primary-cl);
+		position: relative;
+
+		> .backHome {
+			position: absolute;
+			top: 2rem;
+			left: 2rem;
+			font-size: 1.5rem;
+			cursor: pointer;
+			background-color: white;
+			z-index: 100;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 1rem;
+			border-radius: 100%;
+			aspect-ratio: 1;
+			transition: all 0.15s ease-in-out;
+
+			&:hover {
+				transform: scale(1.05);
+			}
+
+			> svg {
+				font-size: 1.5rem;
+				color: var(--primary-cl);
+			}
+		}
+
+		a {
+			text-decoration: none;
+			font-size: 1.15rem;
+		}
+
+		.left {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 1;
+
+			.videoContainer {
+				position: relative;
+				width: 100%;
+				height: 100%;
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: linear-gradient(
+						to right,
+						rgba(0, 0, 0, 0) 25%,
+						var(--primary-cl) 100%
+					);
+					pointer-events: none;
+				}
+
+				video {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+
+		.right {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+			padding: 0 2%;
+			z-index: 10;
+
+			.logo {
+				height: 10vh;
+				position: absolute;
+				bottom: 2rem;
+				left: 50%;
+				transform: translateX(-50%);
+				margin: 1rem 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				> img {
+					width: 10rem;
+				}
+				z-index: 10;
+			}
+
+			.main {
+				width: 70%;
+				height: fit-content;
+				width: 95%;
+				padding: 2rem;
+				color: #000000;
+				background: #e6e6e6e0;
+				box-shadow: 0 8px 32px 0
+					rgba(31, 38, 135, 0.37);
+				backdrop-filter: blur(2px);
+				-webkit-backdrop-filter: blur(2px);
+				border-radius: 10px;
+				border: 1px solid rgba(255, 255, 255, 0.18);
+
+				h2 {
+					font-size: 2.5rem;
+					font-weight: 600;
+					margin: 0 0 1rem 0;
+					font-family: 'Metropolis', sans-serif;
+				}
+
+				p {
+					font-weight: 400;
+					margin: 0 0 2.5rem 0;
+				}
+
+				input[type='email'] {
+					margin: 1rem 0 0 0;
+				}
+
+				input {
+					width: 100%;
+					padding: 1rem;
+					border-radius: 0.3rem;
+					border: 1px solid #4a4a4a75;
+					background-color: transparent;
+					font-size: 1rem;
+					color: rgb(0, 0, 0);
+
+					&:focus {
+						border: 1px solid transparent;
+						outline: 1px solid var(--accent-cl);
+					}
+
+					&::placeholder {
+						font-size: 1rem;
+						color: rgb(0, 0, 0);
+					}
+				}
+				s .submitbtn {
+					width: 100%;
+					margin: 1rem 0 0 0;
+					padding: 1rem 10%;
+					border-radius: 0.3rem;
+					background-color: var(--accent-cl);
+					border: 1px solid transparent;
+					color: #fff;
+					font-weight: 500;
+					font-size: 1.1rem;
+					transition: all 0.15s ease-in-out;
+					text-align: center;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 0.5rem;
+
+					&:hover {
+						background-color: var(--primary-cl);
+						cursor: pointer;
+						border: 1px solid grey;
+						box-shadow: 7px 5px 60px -14px var(--accent-cl);
+					}
+
+					&:active {
+						transform: scale(0.97);
+						box-shadow: 7px 5px 56px -10px var(--accent-cl);
+					}
+				}
+
+				.signUplabel {
+					margin: 2rem 0 0.5rem 0;
+
+					a {
+						cursor: pointer;
+						font-weight: 500;
+						color: var(--accent-cl);
+					}
+				}
+
+				.forgetpassLabel {
+					cursor: pointer;
+					font-weight: 500;
+					color: var(--accent-cl);
+				}
+			}
+
+			.verificationWrapper {
+				display: flex;
+				flex-direction: column;
+				color: rgb(0, 0, 0);
+				padding: 2rem;
+				background: #e6e6e6e0;
+				box-shadow: 0 8px 32px 0
+					rgba(31, 38, 135, 0.37);
+				backdrop-filter: blur(2px);
+				-webkit-backdrop-filter: blur(2px);
+				border-radius: 10px;
+				border: 1px solid rgba(255, 255, 255, 0.18);
+
+				h2 {
+					font-size: 2rem;
+				}
+
+				// p {
+				// 	font-size: 1rem;
+				// 	margin: 0.5rem 0 0 0;
+				// 	color: #e4e4e4;
+				// }
+
+				.ResendOtplabel {
+					margin: 2rem 0 0 0;
+
+					.mailLabel {
+						font-weight: 500;
+						color: var(--accent-cl);
+						cursor: pointer;
+					}
+				}
+
+				.otpWrapper {
+					display: flex;
+					align-items: center;
+					gap: 1rem;
+					margin: 2rem 0 0 0;
+
+					input::-webkit-outer-spin-button,
+					input::-webkit-inner-spin-button {
+						-webkit-appearance: none;
+						margin: 0;
+					}
+
+					input[type='number'] {
+						-moz-appearance: textfield;
+						appearance: textfield;
+					}
+
+					input {
+						font-size: 2rem;
+						text-align: center;
+						width: 15%;
+						aspect-ratio: 1;
+						border: 1px solid #00000075;
+						background-color: transparent;
+						caret-color: rgb(0, 0, 0);
+						color: rgb(0, 0, 0);
+
+						&::placeholder {
+							color: #000000;
+						}
+
+						&:focus {
+							border: none;
+							outline: 1px solid var(--primary-cl);
+						}
+					}
+				}
+				.submitbtn {
+					width: fit-content;
+					margin: 2rem 0 0 0;
+					padding: 1rem 10%;
+					border-radius: 0.3rem;
+					background-color: var(--accent-cl);
+					border: 1px solid transparent;
+					color: #fff;
+					font-weight: 500;
+					font-size: 1.1rem;
+					transition: all 0.15s ease-in-out;
+
+					&:hover {
+						background-color: var(--primary-cl);
+						cursor: pointer;
+						border: 1px solid grey;
+						box-shadow: 7px 5px 60px -14px var(--accent-cl);
+					}
+
+					&:active {
+						transform: scale(0.97);
+						box-shadow: 7px 5px 56px -10px var(--accent-cl);
+					}
+				}
+			}
+
+			.successWrapper {
+				min-height: 25vh;
+				height: fit-content;
+				max-height: 50vh;
+				width: 95%;
+				padding: 2rem;
+				color: #000000;
+				background: #e6e6e6e0;
+				box-shadow: 0 8px 32px 0
+					rgba(31, 38, 135, 0.37);
+				backdrop-filter: blur(2px);
+				-webkit-backdrop-filter: blur(2px);
+				border-radius: 10px;
+				border: 1px solid rgba(255, 255, 255, 0.18);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+
+				.animationContainer {
+					height: 30%;
+					width: 100%;
+					margin: 3rem 0;
+
+					> img {
+						height: 100%;
+						width: 100%;
+						object-fit: contain;
+					}
+				}
+
+				h2 {
+					font-size: 1.5rem;
+				}
+
+				p {
+					font-size: 1rem;
+					margin: 0.5rem 0 0 0;
+				}
+
+				.submitbtn {
+					width: fit-content;
+					margin: 2rem 0 0 0;
+					padding: 1rem 10%;
+					border-radius: 0.3rem;
+					background-color: var(--accent-cl);
+					border: 1px solid transparent;
+					color: #fff;
+					font-weight: 500;
+					font-size: 1rem;
+					transition: all 0.15s ease-in-out;
+
+					&:hover {
+						background-color: var(--primary-cl);
+						cursor: pointer;
+						border: 1px solid grey;
+						box-shadow: 7px 5px 60px -14px var(--accent-cl);
+					}
+
+					&:active {
+						transform: scale(0.97);
+						box-shadow: 7px 5px 56px -10px var(--accent-cl);
+					}
+				}
+			}
+
+			.changePassWrapper {
+				width: 95%;
+				padding: 2rem;
+				color: #000000;
+				background: #e6e6e6e0;
+				box-shadow: 0 8px 32px 0
+					rgba(31, 38, 135, 0.37);
+				backdrop-filter: blur(2px);
+				-webkit-backdrop-filter: blur(2px);
+				border-radius: 10px;
+				border: 1px solid rgba(255, 255, 255, 0.18);
+
+				h2 {
+					font-size: 2rem;
+					margin-bottom: 2rem;
+				}
+
+				input {
+					width: 100%;
+					padding: 1rem;
+					border-radius: 0.3rem;
+					border: 1px solid #4a4a4a75;
+					background-color: transparent;
+					font-size: 1rem;
+					color: rgb(0, 0, 0);
+
+					&::placeholder {
+						font-size: 1rem;
+						color: rgb(0, 0, 0);
+					}
+				}
+
+				.passwordWrapper {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					width: 100%;
+					margin: 1rem 0 0 0;
+					border: 1px solid #4a4a4a75;
+					background-color: transparent;
+					border-radius: 0.3rem;
+					padding: 0 1rem 0 0;
+
+					&:focus-within {
+						border: 1px solid var(--primary-cl);
+					}
+
+					> input {
+						border: 1px solid transparent;
+						&:focus {
+							outline: 1px solid transparent;
+						}
+					}
+
+					svg {
+						font-size: 1.5rem;
+						color: #000000;
+						margin: 0 0 0 1rem;
+
+						&:hover {
+							cursor: pointer;
+						}
+					}
+				}
+
+				.submitbtn {
+					width: fit-content;
+					margin: 2rem 0 0 0;
+					padding: 0.75rem 10%;
+					border-radius: 0.3rem;
+					background-color: var(--accent-cl);
+					border: 1px solid transparent;
+					color: #fff;
+					font-weight: 500;
+					font-size: 1rem;
+					transition: all 0.15s ease-in-out;
+
+					&:hover {
+						background-color: var(--primary-cl);
+						cursor: pointer;
+						border: 1px solid grey;
+						box-shadow: 7px 5px 60px -14px var(--accent-cl);
+					}
+
+					&:active {
+						transform: scale(0.97);
+						box-shadow: 7px 5px 56px -10px var(--accent-cl);
+					}
+				}
+			}
+		}
+	}
+}

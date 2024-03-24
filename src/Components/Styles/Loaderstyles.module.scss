@@ -1,0 +1,294 @@
+.contentDiv {
+	margin: 2rem 0 0 0;
+	height: 60vh;
+	max-height: 75vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	--bgcl: #c1c1c1;
+	--fgcl: #ffffff;
+
+	@keyframes animateFade {
+		0% {
+			opacity: 0.75;
+		}
+		25% {
+			opacity: 0.8;
+		}
+		50% {
+			opacity: 0.85;
+		}
+		75% {
+			opacity: 0.9;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	.postWrapper {
+		height: 100%;
+		width: 18%;
+		> .videoCover {
+			height: 100%;
+			width: 100%;
+			object-fit: contain;
+			background-color: var(--fgcl);
+		}
+	}
+
+	.postInfo {
+		width: 50%;
+		padding: 0 1rem;
+		height: 100%;
+
+		.profileInfo {
+			height: 100%;
+			background-color: white;
+			width: 100%;
+			padding: 1rem 2rem;
+			border-radius: 0.25rem;
+
+			.accountInfo {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				gap: 0 2rem;
+
+				.profilePic {
+					width: 7.5rem;
+					aspect-ratio: 1;
+					object-fit: contain;
+					border-radius: 50%;
+					background-color: var(--bgcl);
+					animation: 0.5s ease-in infinite alternate
+						animateFade;
+				}
+
+				> .name {
+					> .usernameLabel {
+						background-color: var(--bgcl);
+						width: 15rem;
+						border-radius: 0.25rem;
+						height: 1.25rem;
+						margin: 1rem 0 0 0;
+						animation: 0.5s ease-in infinite alternate
+							animateFade;
+					}
+
+					.nameLabel {
+						background-color: var(--bgcl);
+						width: 15rem;
+						border-radius: 0.25rem;
+						height: 1.25rem;
+						animation: 0.5s ease-in infinite alternate
+							animateFade;
+					}
+				}
+			}
+
+			.captionInfo:nth-child(2) {
+				background-color: var(--bgcl);
+				width: 50%;
+				border-radius: 0.5rem;
+				height: 1.25rem;
+				margin: 2rem 0 0 1rem;
+			}
+
+			.captionInfo {
+				background-color: var(--bgcl);
+				width: 50%;
+				border-radius: 0.5rem;
+				height: 1.25rem;
+				margin: 1rem 0 0 1rem;
+				animation: 0.5s ease-in infinite alternate
+					animateFade;
+			}
+			.postMetadata {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				gap: 0 0.5rem;
+				flex-wrap: wrap;
+				padding: 0.25rem 0 0 0;
+
+				.chunkWrapper {
+					background-color: var(--bgcl);
+					width: 15%;
+					border-radius: 20rem;
+					height: 3rem;
+					margin: 2rem 0 0 1rem;
+					animation: 0.5s ease-in infinite alternate
+						animateFade;
+				}
+			}
+
+			> .btnWrapper {
+				display: flex;
+				margin: 0.75rem 0 0 0;
+
+				.download {
+					background-color: var(--bgcl);
+					width: 40%;
+					border-radius: 0.5rem;
+					height: 4rem;
+					margin: 2rem 0 0 1rem;
+					animation: 0.5s ease-in infinite alternate
+						animateFade;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.contentDiv {
+		margin: 0;
+		min-height: 0;
+		height: auto;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		--bgcl: #c1c1c1;
+		--fgcl: #ffffff;
+
+		@keyframes animateFade {
+			0% {
+				opacity: 0.75;
+			}
+			25% {
+				opacity: 0.8;
+			}
+			50% {
+				opacity: 0.85;
+			}
+			75% {
+				opacity: 0.9;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+		.postWrapper {
+			height: 100vh;
+			width: 100%;
+			display: none;
+
+			> .videoCover {
+				height: 100%;
+				width: 100%;
+				object-fit: contain;
+				// background-color: var(--fgcl);
+				background-color: rgb(255, 21, 21);
+			}
+		}
+
+		.postInfo {
+			width: 100%;
+			padding: 0;
+			height: 100%;
+
+			.profileInfo {
+				height: 100%;
+				background-color: white;
+				width: 100%;
+				padding: 2rem;
+				border-radius: 0.25rem;
+
+				.accountInfo {
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					gap: 0 2rem;
+
+					.profilePic {
+						width: 7.5rem;
+						aspect-ratio: 1;
+						object-fit: contain;
+						border-radius: 50%;
+						background-color: var(--bgcl);
+						animation: 0.5s ease-in infinite alternate
+							animateFade;
+					}
+
+					> .name {
+						> .usernameLabel {
+							background-color: var(--bgcl);
+							width: 15rem;
+							border-radius: 0.25rem;
+							height: 1.25rem;
+							margin: 1rem 0 0 0;
+							animation: 0.5s ease-in infinite alternate
+								animateFade;
+						}
+
+						.nameLabel {
+							background-color: var(--bgcl);
+							width: 15rem;
+							border-radius: 0.25rem;
+							height: 1.25rem;
+							animation: 0.5s ease-in infinite alternate
+								animateFade;
+						}
+					}
+				}
+
+				.captionInfo:nth-child(2) {
+					background-color: var(--bgcl);
+					width: 50%;
+					border-radius: 0.5rem;
+					height: 1.25rem;
+					margin: 2rem 0 0 1rem;
+				}
+
+				.captionInfo {
+					background-color: var(--bgcl);
+					width: 75%;
+					border-radius: 0.5rem;
+					height: 1.25rem;
+					margin: 1rem 0 0 1rem;
+					animation: 0.5s ease-in infinite alternate
+						animateFade;
+				}
+				.postMetadata {
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					gap: 0 0.25rem;
+					flex-wrap: wrap;
+					padding: 0.25rem 0 0 0;
+
+					.chunkWrapper {
+						background-color: var(--bgcl);
+						width: 20%;
+						border-radius: 20rem;
+						height: 3rem;
+						margin: 2rem 0 0 1rem;
+						animation: 0.5s ease-in infinite alternate
+							animateFade;
+					}
+				}
+
+				> .btnWrapper {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					.download {
+						background-color: var(--bgcl);
+						width: 50%;
+						border-radius: 0.5rem;
+						height: 4rem;
+						margin: 2rem 0 0 1rem;
+						animation: 0.5s ease-in infinite alternate
+							animateFade;
+					}
+				}
+			}
+		}
+	}
+}

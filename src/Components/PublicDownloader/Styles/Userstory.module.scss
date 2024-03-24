@@ -1,0 +1,248 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	min-height: 65vh;
+	width: 75%;
+	border-radius: 1.5rem;
+	margin: 1rem 0;
+
+	> .noStory {
+		width: 60%;
+		height: 50vh;
+		border-radius: 0.5rem;
+		border: 1px solid rgba(255, 255, 255, 0.208);
+		padding: 1rem 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		> img {
+			width: 10rem;
+			height: 10rem;
+			transform: rotate(35deg);
+			object-fit: contain;
+		}
+
+		> p {
+			font-size: 1.25rem;
+			font-weight: 600;
+			color: #ffffff;
+			margin: 1rem 0;
+		}
+
+		> .btn {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 35%;
+			min-height: 3rem;
+			border-radius: 0.5rem;
+			margin: 1rem 0;
+			border: 1px solid transparent;
+			transition: all 0.15s ease-in-out;
+			color: white;
+			background-color: var(--accent-cl);
+
+			&:active {
+				transform: scale(0.97);
+			}
+
+			&:hover {
+				border: 1px solid #ffffff;
+				background-color: transparent;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.swiperwrapper {
+		user-select: none;
+		width: 100%;
+		.card {
+			border: 2px solid var(--light-cl);
+			aspect-ratio: 9/16;
+			width: 25%;
+			background-color: black;
+			border-radius: 1rem;
+			overflow: hidden;
+			position: relative;
+			box-shadow: 0 0 0.5rem var(--accent-cl);
+
+			> img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				z-index: 1;
+			}
+
+			.btnWrapper {
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				width: 100%;
+				z-index: 10;
+
+				> .btn {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: #ffffff;
+					width: 20%;
+					min-height: 3rem;
+					transition: all 0.15s ease-in-out;
+					border: 1px solid transparent;
+					background-color: #303030;
+
+					&:nth-child(1) {
+						border-radius: 1rem 0 0 0;
+					}
+
+					&:nth-child(2) {
+						border-radius: 0 0 1rem 0;
+					}
+
+					&:active {
+						transform: scale(0.97);
+					}
+
+					> svg {
+						font-size: 1.75rem;
+					}
+
+					&:hover {
+						background-color: var(--accent-cl);
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+
+	> .swipeAnim {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: fit-content;
+		height: fit-content;
+		padding: 1rem 3rem;
+		margin: 1rem 0;
+		border-radius: 0.5rem;
+		border: 1px solid #404040;
+		position: relative;
+
+		> img {
+			width: 5rem;
+			height: 5rem;
+			object-fit: contain;
+		}
+
+		> p {
+			font-size: 1rem;
+			font-weight: 500;
+			color: #ffffff;
+		}
+
+		> svg {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			color: #ff4646;
+			padding: 0.1rem;
+			font-size: 1.25rem;
+			transition: all 0.15s ease-in-out;
+
+			&:hover {
+				cursor: pointer;
+				background-color: white;
+				border-radius: 1rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		min-height: fit-content;
+		width: 100%;
+		border-radius: 1.5rem;
+		margin: 2rem 0;
+
+		.swiperwrapper {
+			user-select: none;
+			width: 100%;
+
+			.card {
+				border: 2px solid var(--accent-cl);
+				width: 25%;
+				aspect-ratio: 9/16;
+				background-color: black;
+				border-radius: 1rem;
+				overflow: hidden;
+				position: relative;
+				box-shadow: 0 0 0.5rem var(--accent-cl);
+
+				> img {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+					z-index: 1;
+				}
+
+				.btnWrapper {
+					display: flex;
+					align-items: center;
+					justify-content: flex-end;
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+
+					> .btn {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: #ffffff;
+						width: 20%;
+						min-height: 3rem;
+						transition: all 0.15s ease-in-out;
+						border: 1px solid transparent;
+
+						&:nth-child(1) {
+							border-radius: 1rem 0 0 0;
+						}
+
+						&:nth-child(2) {
+							border-radius: 0 0 1rem 0;
+						}
+
+						&:active {
+							transform: scale(0.97);
+						}
+
+						> svg {
+							font-size: 1.75rem;
+						}
+
+						&:hover {
+							border: 1px solid #ffffff;
+							background-color: var(--accent-cl);
+							cursor: pointer;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,245 @@
+.Wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(10px);
+	position: fixed;
+	z-index: 100;
+
+	> .main {
+		width: 50%;
+		height: 65vh;
+		background-color: #ffffff;
+		border-radius: 1rem;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		overflow: hidden;
+		position: relative;
+
+		> .closeWrapper {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			padding: 2rem;
+			position: absolute;
+			z-index: 10;
+
+			> .btn {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 100%;
+				transition: all 0.15s ease-in-out;
+
+				&:hover {
+					background-color: white;
+					> svg {
+						color: #ff3f3f;
+						cursor: pointer;
+					}
+				}
+
+				> svg {
+					font-size: 2rem;
+					color: rgb(255, 124, 124);
+					transition: all 0.15s ease-in-out;
+				}
+			}
+		}
+
+		.contentDiv {
+			height: 100%;
+			max-height: 100%;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			z-index: 1;
+
+			.postWrapper {
+				height: 100%;
+				aspect-ratio: 9/16;
+				position: relative;
+
+				> img {
+					height: 100%;
+					width: 100%;
+					object-fit: contain;
+				}
+
+				> video {
+					height: 100%;
+					width: 100%;
+					object-fit: contain;
+				}
+
+				.controllers {
+					width: 100%;
+					height: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: absolute;
+					top: 0;
+
+					> svg {
+						color: white;
+						font-size: 2rem;
+						transition: all 0.15s ease-in-out;
+						&:hover {
+							cursor: pointer;
+							transform: scale(1.1);
+						}
+					}
+
+					.muteControls {
+						width: 100%;
+						display: flex;
+						justify-content: flex-end;
+						align-items: center;
+						position: absolute;
+						bottom: 0;
+						height: fit-content;
+						padding: 0 1.25rem 1.25rem 0;
+
+						> svg {
+							color: white;
+							font-size: 2rem;
+							transition: all 0.15s ease-in-out;
+							opacity: 0.75;
+							&:hover {
+								cursor: pointer;
+								transform: scale(1.1);
+							}
+						}
+					}
+				}
+
+				.hideControls {
+					animation: fadeOut 0.5s ease-in-out 1s
+						forwards;
+
+					@keyframes fadeOut {
+						from {
+							opacity: 1;
+						}
+						to {
+							opacity: 0;
+						}
+					}
+				}
+			}
+
+			.postInfo {
+				width: 50%;
+				padding: 0;
+				height: 100%;
+
+				.profileInfo {
+					height: 100%;
+					background-color: white;
+					width: 100%;
+					padding: 2rem;
+					border-radius: 0.25rem;
+
+					.accountInfo {
+						display: flex;
+						justify-content: flex-start;
+						align-items: center;
+						gap: 0 1.5rem;
+
+						img {
+							width: 7.5rem;
+							aspect-ratio: 1;
+							object-fit: contain;
+							border-radius: 50%;
+						}
+
+						@keyframes spin {
+							0% {
+								rotate: (0deg);
+							}
+
+							100% {
+								rotate: (360deg);
+							}
+						}
+						.rotate {
+							animation: spin 2s linear infinite;
+						}
+
+						> .name {
+							> p {
+								font-size: 1rem;
+								font-weight: 500;
+
+								&:hover {
+									cursor: pointer;
+									text-decoration: underline;
+									text-underline-offset: 0.25rem;
+								}
+							}
+
+							h2 {
+								font-size: 1.5rem;
+								font-weight: 600;
+								margin: 0 0 0.25rem 0;
+
+								svg {
+									color: #00bd00;
+									font-size: 1.25rem;
+								}
+							}
+						}
+					}
+
+					.download {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 50%;
+						border-radius: 0;
+						margin: 1.5rem 0 0 0.5rem;
+						padding: 1rem 0;
+						gap: 0.75rem;
+						border: 1px solid transparent;
+						background-color: var(--accent-cl);
+						transition: all 0.15s ease-in-out;
+
+						svg {
+							transition: all 0.15s ease-in-out;
+							font-size: 1.5rem;
+							color: white;
+						}
+
+						p {
+							transition: all 0.15s ease-in-out;
+							font-size: 1rem;
+							font-weight: 500;
+							color: white;
+						}
+
+						&:hover {
+							cursor: pointer;
+							background-color: #ffffff;
+							border: 1px solid #646464;
+
+							p {
+								color: #000000;
+							}
+
+							svg {
+								color: #000000;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

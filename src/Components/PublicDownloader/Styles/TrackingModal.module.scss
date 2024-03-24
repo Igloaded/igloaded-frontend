@@ -1,0 +1,579 @@
+html {
+	font-size: 100%;
+}
+
+.main {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 100;
+
+	> .mainModal {
+		min-height: 55vh;
+		width: 50vw;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		border-radius: 10px;
+		padding: 2rem;
+
+		> svg {
+			position: absolute;
+			top: 2rem;
+			right: 2rem;
+			cursor: pointer;
+			font-size: 2rem;
+			color: rgb(255, 97, 97);
+		}
+
+		> h3 {
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+
+		> p {
+			font-size: 1rem;
+			font-weight: 400;
+			margin: 0.5rem 0 0 0;
+		}
+
+		> .dataModal {
+			margin: 2rem 0 0 0;
+			width: 100%;
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			gap: 3rem;
+
+			> img {
+				width: 25%;
+				height: 100%;
+				object-fit: contain;
+			}
+
+			> .configModal {
+				display: flex;
+				align-items: flex-start;
+				justify-content: center;
+				flex-direction: column;
+				gap: 1.5rem;
+				width: 100%;
+
+				> .reelUrl {
+					width: 100%;
+
+					> p {
+						font-size: 1rem;
+						font-weight: 600;
+
+						> span {
+							font-size: 0.95rem;
+							font-weight: 400;
+							color: #383838;
+						}
+					}
+				}
+
+				> .inputWrapper {
+					width: 100%;
+
+					> p {
+						font-size: 1rem;
+						font-weight: 500;
+					}
+
+					.info {
+						font-size: 0.9rem;
+						font-weight: 400;
+						margin: 0.5rem 0 0 0;
+						color: #383838;
+					}
+
+					> input {
+						width: 60%;
+						padding: 1rem;
+						border: 1px solid #ccc;
+						border-radius: 0.25rem;
+						margin: 0.5rem 0 0 0;
+						font-size: 1rem;
+
+						&:focus {
+							outline: none;
+							border: 1px solid #000;
+						}
+
+						&::placeholder {
+							font-size: 1rem;
+						}
+					}
+
+					input[type='number']::-webkit-inner-spin-button,
+					input[type='number']::-webkit-outer-spin-button {
+						-webkit-appearance: none;
+						margin: 0;
+					}
+
+					input[type='number'] {
+						appearance: textfield;
+						-moz-appearance: textfield;
+					}
+				}
+
+				> .submit {
+					width: 60%;
+					padding: 1rem;
+					border: 1px solid #ccc;
+					border-radius: 0.75rem;
+					margin: 0.5rem 0 0 0;
+					font-size: 1rem;
+					cursor: pointer;
+					background-color: #000;
+					color: #fff;
+					font-weight: 500;
+					transition: all 0.15s ease-in-out;
+
+					> p {
+						font-size: 1rem;
+						font-weight: 500;
+						text-align: center;
+					}
+
+					&:hover {
+						background-color: #fff;
+						color: #000;
+					}
+				}
+			}
+		}
+	}
+
+	.loading {
+		height: 55vh;
+		width: 50vw;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		border-radius: 10px;
+		padding: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		> .title {
+			font-size: 1.5rem;
+			font-weight: 600;
+			margin: 2rem 0 0 0;
+		}
+
+		> .info {
+			font-size: 1rem;
+			font-weight: 400;
+			margin: 0.25rem 0 0 0;
+		}
+
+		.loader {
+			display: inline-grid;
+			padding: 5px;
+			background: #fff;
+			filter: blur(4px) contrast(12);
+		}
+		.loader:before {
+			content: '';
+			height: 40px;
+			aspect-ratio: 3;
+			--c: #0000 64%, #000 66% 98%, #0000 101%;
+			background:
+				radial-gradient(
+						35% 146% at 50% 159%,
+						var(--c)
+					)
+					0 0,
+				radial-gradient(
+						35% 146% at 50% -59%,
+						var(--c)
+					)
+					100% 100%;
+			background-size: calc(200% / 3) 50%;
+			background-repeat: repeat-x;
+			animation: l11 0.8s infinite linear;
+		}
+		@keyframes l11 {
+			to {
+				background-position:
+					-200% 0,
+					-100% 100%;
+			}
+		}
+	}
+
+	> .successWrapper {
+		height: 55vh;
+		width: 50vw;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		border-radius: 10px;
+		padding: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		> .success {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			width: 100%;
+
+			> img {
+				aspect-ratio: 1;
+				width: 10%;
+				object-fit: contain;
+			}
+
+			> h3 {
+				font-size: 1.5rem;
+				font-weight: 700;
+				margin: 1.5rem 0 0 0;
+			}
+
+			> p {
+				font-size: 1.15rem;
+				font-weight: 400;
+				margin: 0.25rem 0 0 0;
+				max-width: 100%;
+				text-align: center;
+			}
+
+			> .submit {
+				width: 25%;
+				padding: 1rem;
+				border: 1px solid #ccc;
+				border-radius: 0.75rem;
+				margin: 1.5rem 0 0 0;
+				font-size: 1rem;
+				cursor: pointer;
+				background-color: #000;
+				color: #fff;
+				font-weight: 500;
+				transition: all 0.15s ease-in-out;
+
+				> p {
+					font-size: 1rem;
+					font-weight: 500;
+					text-align: center;
+				}
+
+				&:hover {
+					background-color: #fff;
+					color: #000;
+				}
+			}
+		}
+	}
+}
+
+@media ((min-width: 801px) and (max-width: 1200px)) {
+	.main {
+		> .mainModal {
+			min-height: 55vh;
+			width: 85%;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.main {
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 100;
+
+		> .mainModal {
+			min-height: 55vh;
+			width: 90%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: white;
+			border-radius: 10px;
+			padding: 2rem;
+
+			> svg {
+				position: absolute;
+				top: 2rem;
+				right: 2rem;
+				cursor: pointer;
+				font-size: 2rem;
+				color: rgb(255, 97, 97);
+			}
+
+			> h3 {
+				font-size: 1.5rem;
+				font-weight: 600;
+			}
+
+			> p {
+				font-size: 1.1rem;
+				font-weight: 400;
+				margin: 0.5rem 0 0 0;
+			}
+
+			> .dataModal {
+				margin: 1.5rem 0 0 0;
+				width: 100%;
+				display: flex;
+				align-items: flex-start;
+				justify-content: flex-start;
+				flex-direction: column;
+				gap: 3rem;
+
+				> img {
+					width: 30%;
+					height: 100%;
+					object-fit: contain;
+				}
+
+				> .configModal {
+					display: flex;
+					align-items: flex-start;
+					justify-content: center;
+					flex-direction: column;
+					gap: 1.5rem;
+					width: 100%;
+
+					> .reelUrl {
+						width: 100%;
+
+						> p {
+							font-size: 1.2rem;
+							font-weight: 600;
+
+							> span {
+								font-size: 1.1rem;
+								font-weight: 400;
+								color: #383838;
+							}
+						}
+					}
+
+					> .inputWrapper {
+						width: 100%;
+
+						> p {
+							font-size: 1.1rem;
+							font-weight: 500;
+						}
+
+						.info {
+							font-size: 1rem;
+							font-weight: 400;
+							margin: 0.5rem 0 0 0;
+							color: #383838;
+						}
+
+						> input {
+							width: 60%;
+							padding: 1.2rem;
+							border: 1px solid #ccc;
+							border-radius: 0.25rem;
+							margin: 0.5rem 0 0 0;
+							font-size: 1.1rem;
+
+							&:focus {
+								outline: none;
+								border: 1px solid #000;
+							}
+
+							&::placeholder {
+								font-size: 1rem;
+							}
+						}
+
+						input[type='number']::-webkit-inner-spin-button,
+						input[type='number']::-webkit-outer-spin-button {
+							-webkit-appearance: none;
+							margin: 0;
+						}
+
+						input[type='number'] {
+							appearance: textfield;
+							-moz-appearance: textfield;
+						}
+					}
+
+					> .submit {
+						width: 60%;
+						padding: 1rem;
+						border: 1px solid #ccc;
+						border-radius: 0.75rem;
+						margin: 0.5rem 0 0 0;
+						font-size: 1.1rem;
+						cursor: pointer;
+						background-color: #000;
+						color: #fff;
+						font-weight: 500;
+						transition: all 0.15s ease-in-out;
+
+						> p {
+							font-size: 1.2rem;
+							font-weight: 500;
+							text-align: center;
+						}
+
+						&:hover {
+							background-color: #fff;
+							color: #000;
+						}
+					}
+				}
+			}
+		}
+
+		.loading {
+			height: 50vh;
+			width: 90%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: white;
+			border-radius: 10px;
+			padding: 2rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+
+			> .title {
+				font-size: 1.75rem;
+				font-weight: 600;
+				margin: 2rem 0 0 0;
+			}
+
+			> .info {
+				font-size: 1.25rem;
+				font-weight: 400;
+				margin: 0.25rem 0 0 0;
+			}
+
+			.loader {
+				display: inline-grid;
+				padding: 5px;
+				background: #fff;
+				filter: blur(4px) contrast(12);
+			}
+			.loader:before {
+				content: '';
+				height: 40px;
+				aspect-ratio: 3;
+				--c: #0000 64%, #000 66% 98%, #0000 101%;
+				background:
+					radial-gradient(
+							35% 146% at 50% 159%,
+							var(--c)
+						)
+						0 0,
+					radial-gradient(
+							35% 146% at 50% -59%,
+							var(--c)
+						)
+						100% 100%;
+				background-size: calc(200% / 3) 50%;
+				background-repeat: repeat-x;
+				animation: l11 0.8s infinite linear;
+			}
+			@keyframes l11 {
+				to {
+					background-position:
+						-200% 0,
+						-100% 100%;
+				}
+			}
+		}
+
+		> .successWrapper {
+			height: 50vh;
+			width: 90%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: white;
+			border-radius: 10px;
+			padding: 2rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+
+			> .success {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				width: 100%;
+
+				> img {
+					aspect-ratio: 1;
+					width: 17%;
+					object-fit: contain;
+				}
+
+				> h3 {
+					font-size: 2rem;
+					font-weight: 700;
+					margin: 1.5rem 0 0 0;
+				}
+
+				> p {
+					font-size: 1.35rem;
+					font-weight: 400;
+					margin: 0.5rem 0 0 0;
+					max-width: 100%;
+					text-align: center;
+				}
+
+				> .submit {
+					width: 25%;
+					padding: 1rem;
+					border: 1px solid #ccc;
+					border-radius: 0.75rem;
+					margin: 1.5rem 0 0 0;
+					font-size: 1rem;
+					cursor: pointer;
+					background-color: #000;
+					color: #fff;
+					font-weight: 500;
+					transition: all 0.15s ease-in-out;
+
+					> p {
+						font-size: 1rem;
+						font-weight: 500;
+						text-align: center;
+					}
+
+					&:hover {
+						background-color: #fff;
+						color: #000;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,854 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap');
+
+/* p {
+	font-family: 'Montserrat', sans-serif;
+} */
+
+.main {
+	min-height: 100vh;
+	height: auto;
+	width: 100%;
+	background-color: #202020;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header {
+	background-color: #ededed;
+	min-height: 5rem;
+}
+
+.heading_text {
+	color: black;
+	font-size: 1.4rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+}
+
+.section1 {
+	background: #ededed;
+	width: 60%;
+	border-radius: 0.5rem;
+	margin: 1.5rem auto;
+	padding: 1rem;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+}
+
+.urlbox {
+	width: 100%;
+	border-radius: 1rem;
+	height: 3.5rem;
+
+	font-size: 1.4rem;
+	border: none;
+	padding: 1rem;
+	margin: 1rem 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.tokenbox {
+	margin: 1rem 0;
+	width: 100%;
+	border-radius: 1rem;
+	height: 3.5rem;
+	font-size: 1.4rem;
+	border: none;
+	padding: 1rem;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	max-width: 100%;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.submitQuery {
+	background-color: rgb(75, 75, 75);
+	color: rgb(255, 255, 255);
+	font-family: 'Montserrat', sans-serif;
+	border-radius: 0.2rem;
+	padding: 1rem;
+	width: 20%;
+	text-align: center;
+	margin-left: 1rem;
+	transition: all 0.2s ease-in-out;
+}
+
+.submitQuery:hover {
+	background-color: #000000;
+	cursor: pointer;
+}
+
+.databox {
+	width: 100%;
+	padding: 1rem;
+	border-radius: 1rem;
+	font-size: 1.4rem;
+	border: none;
+	margin: 1rem 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.submit {
+	width: 50%;
+	background-color: #202020;
+	color: #ededed;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 3rem;
+	border-radius: 1rem;
+	padding: 2rem;
+	font-size: 1.3rem;
+	border: 1px solid transparent;
+	transition: all 0.2s ease-in-out;
+}
+
+.submit:hover {
+	background-color: #ffffff;
+	border: 1px solid black;
+	color: black;
+	cursor: pointer;
+}
+
+textarea {
+	outline: none;
+	resize: none;
+}
+
+.tokenContainer {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.copy {
+	color: rgb(24, 24, 24);
+	background-color: #ffffff;
+	padding: 0.5rem;
+	width: 3rem;
+	aspect-ratio: 1;
+	border-radius: 10rem;
+	margin-left: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.7rem;
+	transition: all 0.2s ease-in-out;
+}
+
+.note {
+	color: white;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	max-width: 100%;
+}
+
+.copy:hover {
+	background-color: #383838;
+	color: #ededed;
+	cursor: pointer;
+}
+
+input:focus {
+	outline: 1px solid rgb(156, 156, 156);
+}
+
+input::placeholder {
+	font-size: 1.3rem;
+	text-align: start;
+}
+
+textarea::placeholder {
+	font-size: 1.3rem;
+}
+
+.responseData {
+	display: flex;
+	width: 60%;
+	margin: 2.5rem auto 0 auto;
+	flex-direction: row;
+	border: 1px solid rgb(61, 61, 61);
+	padding: 2rem;
+}
+
+.Profile {
+	display: flex;
+	align-items: center;
+}
+
+.ProfileInfo {
+	width: 100%;
+	padding: 0 0 0 2rem;
+}
+
+.profileUser {
+	color: #c6c6c6;
+	font-size: 1.2rem;
+	text-align: left;
+}
+
+.profileNameOuter {
+	color: white;
+	font-size: 1.5rem;
+	text-align: left;
+}
+
+.profileImg {
+	border-radius: 10rem;
+	height: 8rem;
+	aspect-ratio: 1;
+}
+
+.reelCaption {
+	font-size: 1.2rem;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+	font-style: italic;
+	margin: 1rem 0 2rem 0;
+}
+
+.reelUploadDate {
+	font-size: 1.2rem;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+	font-style: italic;
+	margin: 2rem 0 0 0;
+}
+
+.DataInfo {
+	padding: 1rem 0 0 3rem;
+	width: 100%;
+}
+
+.thumbnail_card {
+	width: 50%;
+	background-size: 1920px 1080px;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.thumbnail_card > img {
+	height: 75%;
+	aspect-ratio: 1;
+}
+
+.reelContainer {
+	height: 100%;
+	aspect-ratio: 9/16;
+	border: 1px solid white;
+}
+
+.mediaBlock {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.mediaOptions {
+	width: 70%;
+	margin: 0 0 0 2rem;
+}
+
+.MediaInfoBlock {
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.2rem;
+	border: 1px solid white;
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s ease-in-out;
+	height: 4rem;
+	min-width: fit-content;
+	width: 50%;
+	margin: 0 0 1rem 0;
+}
+
+.MediaPosted {
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.2rem;
+	border: 1px solid white;
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s ease-in-out;
+	height: 4rem;
+	min-width: fit-content;
+	width: 50%;
+	margin: 0 0 1rem 0;
+}
+
+.MediaPosted:hover {
+	background-color: #ffffff;
+	color: black;
+	cursor: pointer;
+}
+
+.downloadReel {
+	background: white;
+	padding: 1rem;
+	border: 1px solid white;
+	width: 50%;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.1rem;
+	transition: all 0.2s ease-in-out;
+}
+
+.mediaContainer {
+	width: 100%;
+	min-height: 50vh;
+	height: 50vh;
+	margin: 1rem 0 0 0;
+	border: 1px solid rgba(249, 249, 249, 0.165);
+}
+
+.downloadMediaBtn {
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.2rem;
+	border: 1px solid white;
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: fit-content;
+	width: 50%;
+	transition: all 0.2s ease-in-out;
+	height: 4rem;
+}
+
+.downloadMediaBtn:hover {
+	background-color: #ffffff;
+	color: #202020;
+	cursor: pointer;
+}
+
+.mediaInfoContainer {
+	margin: 1rem 0 1rem 0;
+	display: flex;
+}
+
+.likes {
+	display: flex;
+	align-items: center;
+}
+
+.views {
+	display: flex;
+	align-items: center;
+	margin-left: 1rem;
+}
+
+.comments {
+	display: flex;
+	align-items: center;
+	margin-left: 1rem;
+}
+
+.views p,
+.likes p,
+.comments p {
+	line-height: normal;
+	vertical-align: middle;
+	margin: 0 0 0 0.4rem;
+	color: white;
+	font-size: 1.3rem;
+}
+
+.mediaLike {
+	color: rgb(245, 52, 52);
+	font-size: 1.6rem;
+	display: flex;
+	align-items: center;
+}
+
+.mediaView {
+	color: rgb(255, 255, 255);
+	font-size: 1.6rem;
+	display: flex;
+	align-items: center;
+}
+
+.mediaComment {
+	color: rgb(255, 255, 255);
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+}
+
+.downloadReel:hover {
+	background-color: #383838;
+	color: #c6c6c6;
+	cursor: pointer;
+}
+
+.preText {
+	margin-top: 1rem;
+	font-size: 1.2rem;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.MoreInfoView {
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(108, 108, 108, 0.8);
+}
+
+.DialogWrapper {
+	width: 70%;
+	height: 80vh;
+	background-color: #ffffff;
+	border-radius: 1rem;
+	display: flex;
+}
+
+.mainLeft {
+	width: 35%;
+	padding: 2rem;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.Imgpost {
+	width: 100%;
+	aspect-ratio: 1;
+	border: 1px solid red;
+}
+
+.PostActivityBox {
+	min-width: 50%;
+	width: fit-content;
+	height: 4rem;
+	margin-top: 2rem;
+	background-color: #f1f1f1;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.PostDownloadBtn {
+	min-width: 50%;
+	width: fit-content;
+	height: 4rem;
+	margin-top: 2rem;
+	background-color: #f1f1f1;
+	color: #000000;
+	border-radius: 0.5rem;
+	transition: all 0.2s ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.1rem;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.PostDownloadBtn:hover {
+	background-color: #202020;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.caption {
+	font-size: 1.3rem;
+	color: black;
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 2rem;
+}
+
+.PostedOn {
+	font-size: 1.3rem;
+	color: black;
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 2rem;
+}
+
+.taggedAccounts {
+	font-size: 1.3rem;
+	color: black;
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 2rem;
+}
+
+.mainRight {
+	border-left: 1px solid rgb(230, 230, 230);
+	width: 65%;
+	padding: 2.2rem 3rem;
+}
+
+.profilePic {
+	border-radius: 10rem;
+	width: 10rem;
+	aspect-ratio: 1;
+	overflow: hidden;
+}
+
+.profilePic img {
+	height: 100%;
+	width: 100%;
+}
+
+.ProfileWrapper {
+	width: 100%;
+	min-height: 7rem;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-bottom: 1rem;
+}
+
+.profilePost {
+	width: fit-content;
+	min-width: 6rem;
+	height: 5rem;
+	font-size: 1.5rem;
+	font-family: 'Montserrat', sans-serif;
+	margin: 0 0 0 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.profileFollowers {
+	width: fit-content;
+	min-width: 6rem;
+	height: 5rem;
+	font-size: 1.5rem;
+	font-family: 'Montserrat', sans-serif;
+	margin: 0 0 0 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.profileFollowing {
+	width: fit-content;
+	min-width: 6rem;
+	height: 5rem;
+	font-size: 1.5rem;
+	font-family: 'Montserrat', sans-serif;
+	margin: 0 0 0 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.profileFollowing > p,
+.profileFollowers > p,
+.profilePost > p {
+	font-size: 1rem;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+h4 {
+	margin: 0;
+	padding: 0;
+}
+
+.profileContext {
+	padding: 0 0 0 1.5rem;
+	min-height: 5rem;
+	width: 20rem;
+}
+
+.profileName {
+	font-size: 1.2rem;
+	font-family: 'Montserrat', sans-serif;
+	color: #000000;
+}
+
+.profileDesc {
+	font-size: 1rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	color: #000000;
+	margin-top: 0.5rem;
+	max-width: 50%;
+}
+
+.likes {
+	display: flex;
+	align-items: center;
+}
+
+.views {
+	display: flex;
+	align-items: center;
+	margin-left: 1rem;
+}
+
+.comments {
+	display: flex;
+	align-items: center;
+	margin-left: 1rem;
+}
+
+.views p,
+.likes p,
+.comments p {
+	line-height: normal;
+	vertical-align: middle;
+	margin: 0 0 0 0.4rem;
+	color: rgb(255, 255, 255);
+	font-size: 1.3rem;
+}
+
+.Postlikes {
+	display: flex;
+	align-items: center;
+}
+
+.Postviews {
+	display: flex;
+	align-items: center;
+	margin-left: 1rem;
+}
+
+.Postcomments {
+	display: flex;
+	align-items: center;
+	margin-left: 1rem;
+}
+
+.Postviews p,
+.Postlikes p,
+.Postcomments p {
+	line-height: normal;
+	vertical-align: middle;
+	margin: 0 0 0 0.4rem;
+	color: rgb(0, 0, 0);
+	font-size: 1.3rem;
+}
+
+.PostLike {
+	color: rgb(245, 52, 52);
+	font-size: 1.6rem;
+	display: flex;
+	align-items: center;
+}
+
+.PostView {
+	color: rgb(33, 33, 33);
+	font-size: 1.6rem;
+	display: flex;
+	align-items: center;
+}
+
+.PostComment {
+	color: rgb(33, 33, 33);
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+}
+
+.VideoWrapper {
+	height: 100%;
+	width: fit-content;
+	overflow: hidden;
+	border-radius: 0.5rem;
+	position: relative;
+}
+
+.VideoWrapper > video {
+	height: 100%;
+	aspect-ratio: 9/16;
+	z-index: 200;
+}
+
+.videoPlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: all 0.2s ease-in-out;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.seekbarVideo {
+	position: absolute;
+	bottom: 0%;
+	left: 0%;
+	height: 0.2rem;
+	width: 0%;
+	border-bottom: 1px solid #000000;
+	background-color: #f3f3f3;
+}
+
+.videomute {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.buttonClose {
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	font-size: 1.5rem;
+	transition: all 0.2s ease-in-out;
+}
+
+.buttonClose:hover {
+	cursor: pointer;
+}
+
+.videoPlay:hover {
+	cursor: pointer;
+}
+
+.videoPlay > svg {
+	font-size: 6rem;
+	color: #ffffff;
+}
+
+.videoPause > svg {
+	font-size: 6rem;
+	color: #ffffff;
+}
+
+.mainMedia {
+	min-height: 35rem;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.reelContainer {
+	width: 50%;
+	aspect-ratio: 9/16;
+	border: 1px solid rgb(56, 213, 24);
+}
+
+.ImageContainer {
+	width: 80%;
+	aspect-ratio: 1;
+	border: 1px solid rgb(56, 213, 24);
+}
+
+.infoContainer {
+	width: 50%;
+	padding: 3rem 3rem 0 3rem;
+}
+
+.profileWrapper {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.profileWrapper img {
+	border-radius: 10rem;
+	height: 7rem;
+	aspect-ratio: 1;
+	margin: 0 1rem 0 0;
+}
+
+.profileWrapper p {
+	font-size: 1.2rem;
+	color: white;
+}
+
+.MediaInfoText {
+	color: #c6c6c6;
+	font-size: 1.2rem;
+	margin: 1.7rem 0 0 0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+}
+
+.DownloadStory {
+	width: 100%;
+	padding: 1.5rem;
+	border-radius: 0.5rem;
+	border: 1px solid white;
+	margin: 2rem 0 0 0;
+	color: #c6c6c6;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 1.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s ease-in-out;
+}
+
+.DownloadStory:hover {
+	cursor: pointer;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.DownloadStory svg {
+	font-size: 1.5rem;
+	margin: 0 0 0 1rem;
+}
+
+.Mediacontrol {
+	width: 50%;
+	height: 3rem;
+	padding: 1rem;
+	margin: 1rem 0 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.Mediacontrol p:nth-child(2) {
+	margin: 0 2rem;
+	color: #ededed;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.Mediacontrol svg {
+	font-size: 2rem;
+	color: #ededed;
+	transition: all 0.2s ease;
+}
+
+.Mediacontrol svg:hover {
+	cursor: pointer;
+	color: #afafaf;
+}

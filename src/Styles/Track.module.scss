@@ -1,0 +1,353 @@
+.main {
+	--secondary-cl: #fdab8b;
+	--light-cl: #ffffff;
+	--accent-cl: #8644ff;
+	--primary-color: #0f111d;
+	background-color: #0f111d;
+	min-height: 90vh;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+
+	.imageBanner {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-height: 100vh;
+		opacity: 0.5;
+		z-index: 2;
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1000' preserveAspectRatio='none' viewBox='0 0 1920 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1013%26quot%3b)' fill='none'%3e%3crect width='1920' height='1000' x='0' y='0' fill='rgba(15%2c 17%2c 29%2c 1)'%3e%3c/rect%3e%3cpath d='M0 55.56C1.51 27.17 -10.98 5.4 13.33 0C114.02 -22.38 131.66 0 250 0C366.77 0 378.19 -16.99 483.55 0C503.19 3.17 489.26 40.32 500 40.32C512.36 40.32 506.59 3.74 529.76 0C631.59 -16.42 639.88 0 750 0C875 0 875 0 1000 0C1073.37 0 1081.1 -21.88 1146.74 0C1206.1 19.78 1194.59 83.33 1250 83.33C1322.84 83.33 1322.83 26.8 1403.23 0C1447.83 -14.87 1451.61 0 1500 0C1625 0 1625 0 1750 0C1850.33 0 1859.75 -20.66 1950.66 0C1984.75 7.75 1993.08 21.78 2000 56.82C2017.75 146.78 2000 153.41 2000 250C2000 375 2000 375 2000 500C2000 572.91 2024.38 582.45 2000 645.83C1976.3 707.45 1957.85 704.77 1903.85 750C1832.85 809.48 1810.37 788.27 1750 855.26C1697.73 913.27 1737.91 965.64 1678.57 1000C1612.91 1038.01 1589.28 1000 1500 1000C1375 1000 1375 1000 1250 1000C1128.52 1000 1126.13 1004.67 1007.04 1000C1001.13 999.77 1003.46 990.2 1000 990.2C996.6 990.2 999.14 999.77 993.33 1000C874.14 1004.67 871.66 1000 750 1000C654.95 1000 644.98 1022.49 559.9 1000C519.98 989.45 533.27 933.91 500 933.91C458.4 933.91 461.47 986.43 410.16 1000C336.47 1019.48 330.08 1000 250 1000C125 1000 64.87 1060.13 0 1000C-60.13 944.27 -60.09 826.95 0 768.29C64.91 704.92 126.57 764.84 250 755.95C253.49 755.7 253.85 752.74 253.85 750C253.85 747.96 252.62 746.53 250 746.38C125.7 739.18 64.43 798.78 0 735.29C-60.57 675.59 0 617.64 0 500C0 375 0 375 0 250C0 152.78 -5.15 152.17 0 55.56' stroke='rgba(103%2c 98%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M250 243.15C234.63 243.15 218.75 246.51 218.75 250C218.75 253.5 234.65 257.14 250 257.14C259.21 257.14 267.86 253.51 267.86 250C267.86 246.51 259.19 243.15 250 243.15' stroke='rgba(103%2c 98%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M750 171.3C702.24 171.3 651.16 206.96 651.16 250C651.16 299.43 702.82 356.25 750 356.25C793.9 356.25 833.33 300.02 833.33 250C833.33 207.54 793.33 171.3 750 171.3' stroke='rgba(103%2c 98%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M1902.78 1000C1902.78 953.1 1973.47 854.17 2000 854.17C2022.08 854.17 2029.17 956.25 2000 1000C1980.56 1029.17 1902.78 1026.02 1902.78 1000' stroke='rgba(103%2c 98%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M250 157.53C173.59 157.53 96.67 46.4 96.67 0C96.67 -32.36 173.34 0 250 0C325.66 0 401.32 -32.23 401.32 0C401.32 46.53 325.92 157.53 250 157.53' stroke='rgba(103%2c 98%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M491.07 250C496.6 247.69 495.96 241.94 500 241.94C503.33 241.94 502.77 246.07 505.81 250C602.77 375.1 596.81 381.93 700 500C718.91 521.64 724.52 515.56 750 529.41C874.52 597.08 868.16 615.86 1000 663.04C1118.16 705.32 1153.76 749.89 1250 708.33C1342.53 668.37 1377.55 600.65 1377.55 500C1377.55 414.25 1335.05 382.46 1250 335.53C1146.28 278.3 1118.68 326.18 1000 291.67C971.62 283.42 977.94 270.83 955.88 250C852.94 152.78 855.08 150.29 750 55.56C716.42 25.29 678.57 15.53 678.57 0C678.57 -12.25 714.29 0 750 0C875 0 875 0 1000 0C1005.43 0 1006.6 -3.3 1010.87 0C1131.6 93.19 1115.42 133.36 1250 192.98C1359.98 241.7 1416.86 267.39 1500 216.67C1575.02 170.9 1497.29 59.83 1566.33 0C1622.29 -48.5 1658.16 0 1750 0C1809.21 0 1822.03 -28.12 1868.42 0C1947.03 47.64 1955.87 67.67 2000 151.52C2021.66 192.67 2000 200.76 2000 250C2000 337.84 2051.57 391.3 2000 425.68C1926.57 474.64 1864.3 391.84 1750 416.67C1693.25 429 1667.4 445.03 1657.89 500C1638.56 611.69 1706.99 628.62 1692.31 750C1676.75 878.62 1667.88 908.37 1597.4 1000C1571.73 1033.37 1548.7 1000 1500 1000C1375 1000 1375 1000 1250 1000C1172.53 1000 1155.99 1032.25 1095.07 1000C1030.99 966.08 1046.68 867.65 1000 867.65C954.15 867.65 972.51 966.91 910 1000C847.51 1033.08 830 1000 750 1000C687.5 1000 675.22 1027.71 625 1000C550.22 958.74 568.55 924.39 500 862.07C431.05 799.39 422.1 809.49 350 750C297.1 706.35 311.48 679.91 250 655.8C136.48 611.28 86.54 666.68 0 612.75C-38.46 588.78 0 556.38 0 500C0 415.44 -50.38 361.83 0 330.88C74.62 285.04 129.44 366.29 250 346.43C374.97 325.85 371.6 299.93 491.07 250' stroke='rgba(103%2c 98%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M0 920.73C94.95 884.56 142.59 877.51 250 904.76C298.84 917.15 312.5 969.25 312.5 1000C312.5 1016.87 281.25 1000 250 1000C125 1000 94.91 1030.09 0 1000C-30.09 990.46 -30.05 932.18 0 920.73' stroke='rgba(103%2c 98%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M250 71.92C215.12 71.92 180 21.18 180 0C180 -14.78 215 0 250 0C284.54 0 319.08 -14.72 319.08 0C319.08 21.24 284.66 71.92 250 71.92' stroke='rgba(103%2c 98%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M1721.15 250C1696.43 131.99 1682.09 102.19 1693.88 0C1696.51 -22.81 1721.94 0 1750 0C1768.09 0 1773.7 -12.29 1786.18 0C1898.7 110.81 1894.32 122.65 2000 246.21C2001.23 247.65 2000 248.11 2000 250C2000 253.38 2003.29 256.53 2000 256.76C1878.29 265.46 1872.78 270.84 1750 267.86C1733.35 267.46 1724.49 265.92 1721.15 250' stroke='rgba(103%2c 98%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M25 500C25 467.64 140.49 435.71 250 435.71C317.27 435.71 378.57 467.67 378.57 500C378.57 532.42 317.35 565.22 250 565.22C140.56 565.22 25 532.4 25 500' stroke='rgba(103%2c 98%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M446.15 750C446.15 700.2 459.65 637.1 500 637.1C559.49 637.1 645.83 707.94 645.83 750C645.83 784.5 569.13 790.23 500 790.23C469.29 790.23 446.15 776.76 446.15 750' stroke='rgba(103%2c 98%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M1450 750C1509.27 670.21 1479.32 541.67 1500 541.67C1520.35 541.67 1528.34 645.28 1532.05 750C1536.46 874.45 1531.28 882.61 1516.23 1000C1515.25 1007.61 1508.11 1000 1500 1000C1375 1000 1375 1000 1250 1000C1216.55 1000 1183.1 1019.79 1183.1 1000C1183.1 958.9 1200.75 924.34 1250 878.21C1334.2 799.34 1384.27 838.48 1450 750' stroke='rgba(103%2c 98%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M690.1 1000C690.1 934.25 716.41 825.76 750 825.76C784.7 825.76 826.67 937.89 826.67 1000C826.67 1025.01 788.34 1000 750 1000C720.05 1000 690.1 1021.37 690.1 1000' stroke='rgba(103%2c 98%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1013'%3e%3crect width='1920' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+	}
+
+	.reelBanner {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		opacity: 0;
+		z-index: 1;
+		background-image: url('https://pathofex.com/wp-content/uploads/2022/04/insta-cover.webp');
+		background-size: cover;
+	}
+
+	.section1Wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		min-height: 100vh;
+		width: 100%;
+		padding: 0 15%;
+		background-color: transparent;
+		z-index: 3;
+
+		.hero {
+			background-color: transparent;
+			text-align: center;
+			margin: 5rem 0 0 0;
+
+			> svg {
+				color: var(--light-cl);
+				font-size: 7.5rem;
+				margin: 2.5rem 0 0 0;
+			}
+
+			h1 {
+				color: var(--accent-cl);
+				font-size: 2.15rem;
+				font-weight: 800;
+				margin: 1rem 0 0 0;
+				line-height: 2.75rem;
+			}
+			p {
+				color: var(--light-cl);
+				font-size: 1.25rem;
+				font-weight: 400;
+				margin: 0.5rem 0;
+			}
+		}
+
+		.inputWrapper {
+			background: rgba(194, 194, 194, 0.127);
+			box-shadow: 0 8px 32px 0
+				rgba(31, 38, 135, 0.345);
+			// backdrop-filter: blur(2px);
+			// -webkit-backdrop-filter: blur(2px);
+			border: 1px solid rgba(255, 255, 255, 0.149);
+			border-radius: 0.5rem;
+			padding: 2rem 1rem;
+			margin: 1rem 0 0 0;
+			width: 60%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			p {
+				color: var(--light-cl);
+				font-size: 1rem;
+				text-align: center;
+				font-weight: 600;
+			}
+
+			input {
+				margin: 1.5rem 0 0 0;
+				width: 75%;
+				text-align: left;
+				padding: 1rem;
+				border-radius: 0.3rem;
+				font-size: 1rem;
+				transition: all 0.2s ease-in-out;
+				border: 1px solid grey;
+
+				&:focus {
+					outline: none;
+				}
+
+				&::placeholder {
+					font-size: 1rem;
+					color: #696969;
+				}
+			}
+			.submitbtn {
+				width: fit-content;
+				margin: 2rem 0 0 0;
+				padding: 1rem 10%;
+				border-radius: 0.3rem;
+				background-color: var(--accent-cl);
+				border: 1px solid transparent;
+				color: #fff;
+				font-weight: 500;
+				font-size: 1.1rem;
+				transition: all 0.15s ease-in-out;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 0.75rem;
+
+				&:hover {
+					background-color: var(--primary-cl);
+					cursor: pointer;
+					border: 1px solid grey;
+					box-shadow: 7px 5px 60px -14px var(--accent-cl);
+				}
+
+				&:active {
+					transform: scale(0.97);
+					box-shadow: 7px 5px 56px -10px var(--accent-cl);
+				}
+			}
+		}
+	}
+
+	.reeldataWrapper {
+		min-height: 50vh;
+		background-color: var(--light-cl);
+		width: 60%;
+		border-radius: 0.5rem;
+		padding: 2rem;
+		display: flex;
+		margin: 1rem 0 2rem 0;
+
+		> .left {
+			width: 30%;
+			height: 100%;
+
+			> img {
+				aspect-ratio: 9/16;
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				border-radius: 0.5rem;
+			}
+
+			.submit {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-top: 1rem;
+				width: 100%;
+				padding: 1rem;
+				border-radius: 0.3rem;
+				background-color: var(--accent-cl);
+				color: var(--light-cl);
+				border: 1px solid transparent;
+				font-weight: 500;
+				transition: all 0.2s ease-in-out;
+
+				p {
+					color: #ffffff;
+					font-size: 1.1rem;
+					transition: all 0.2s ease-in-out;
+
+					&:hover {
+						color: black;
+					}
+				}
+
+				svg {
+					margin-left: 1rem;
+					font-size: 1rem;
+				}
+
+				&:hover {
+					background-color: transparent;
+					border: 1px solid grey;
+					color: black;
+					cursor: pointer;
+
+					p {
+						color: black;
+					}
+				}
+			}
+		}
+
+		> .right {
+			width: 70%;
+			height: 100%;
+			padding: 0 2rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			> h2 {
+				color: var(--primary-color);
+				font-size: 1.5rem;
+				font-weight: 600;
+				margin: 0 0 1rem 0;
+			}
+
+			.data {
+				> .dataItem {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 1rem;
+					margin: 1rem 0;
+
+					p {
+						color: var(--primary-color);
+						font-size: 1.1rem;
+						font-weight: 500;
+
+						> span {
+							color: var(--primary-cl);
+							font-size: 1rem;
+							font-weight: 400;
+						}
+					}
+				}
+			}
+
+			.videoInsightWrapper {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+
+				&:nth-child(-n + 2) {
+					flex: 1 0 50%; /* grow, shrink, basis */
+				}
+
+				&:nth-child(3) {
+					flex: 1 0 100%;
+				}
+
+				> .dataItem {
+					padding: 1rem;
+					border-radius: 0.5rem;
+					border: 1px solid var(--primary-color);
+					width: fit-content;
+					display: flex;
+					align-items: center;
+
+					p {
+						> .captionWrapper {
+							text-overflow: clip;
+							white-space: nowrap;
+							overflow: hidden;
+							width: 100%;
+						}
+					}
+
+					> svg {
+						font-size: 1.5rem;
+						margin: 0 0.5rem 0 0;
+					}
+
+					p:nth-child(2) {
+						color: var(--primary-color);
+						font-size: 1.15rem;
+						font-weight: 600;
+
+						> span {
+							color: var(--primary-cl);
+							font-size: 1rem;
+							font-weight: 400;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.stepsWrapper {
+		h2 {
+			text-align: center;
+			color: var(--light-cl);
+			font-size: 1.75rem;
+			font-weight: 700;
+			margin: 0 0 1rem 0;
+			> span {
+				vertical-align: middle;
+
+				svg {
+					color: var(--light-cl);
+					font-size: 2rem;
+					margin: 0 0.5rem 0 0;
+				}
+			}
+		}
+
+		.steps {
+			.step {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				margin: 1rem 0;
+				width: 100%;
+				justify-content: flex-start;
+
+				h3 {
+					color: var(--light-cl);
+					font-size: 1.75rem;
+					font-weight: 600;
+					margin: 0.5rem 0;
+				}
+
+				p {
+					color: var(--light-cl);
+					font-size: 1rem;
+					font-weight: 300;
+					margin: 0rem 0;
+				}
+
+				img {
+					margin: 1rem 0;
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+					border-radius: 0.5rem;
+				}
+
+				&:nth-child(even) {
+					align-items: flex-end;
+				}
+			}
+		}
+	}
+}

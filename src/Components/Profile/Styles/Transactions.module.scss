@@ -1,0 +1,588 @@
+.wrapper {
+	width: 75%;
+	height: 100%;
+	max-height: 100%;
+	border-radius: 0.5rem;
+	background-color: var(--primary-cl);
+	border: 1px solid #2d2d2d;
+	padding: 2rem;
+	position: relative;
+	overflow: hidden;
+
+	> .loading {
+		width: 100%;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		position: absolute;
+		background-color: var(--primary-cl);
+		gap: 1.5rem;
+		z-index: 12;
+
+		> p {
+			font-size: 1rem;
+			font-weight: 500;
+			color: #d6d6d6;
+			margin: 0 0 1rem 0;
+		}
+
+		.loader {
+			width: 90px;
+			height: 14px;
+			--c: #fff 92%, #0000;
+			background:
+				radial-gradient(circle closest-side, var(--c))
+					calc(100% / -4) 0,
+				radial-gradient(circle closest-side, var(--c))
+					calc(100% / 4) 0;
+			background-size: calc(100% / 2) 100%;
+			animation: l14 1.5s infinite;
+		}
+		@keyframes l14 {
+			0% {
+				background-position:
+					calc(100% / -4) 0,
+					calc(100% / 4) 0;
+			}
+			50% {
+				background-position:
+					calc(100% / -4) -14px,
+					calc(100% / 4) 14px;
+			}
+			100% {
+				background-position:
+					calc(100% / 4) -14px,
+					calc(3 * 100% / 4) 14px;
+			}
+		}
+	}
+
+	> .upperWrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+
+		> .title {
+			> h3 {
+				font-size: 1.25rem;
+				font-weight: 600;
+				color: #d6d6d6;
+				span {
+					color: #b4b4b4;
+					font-size: 1rem;
+				}
+			}
+
+			> p {
+				font-size: 1rem;
+				font-weight: 500;
+				color: #d6d6d6;
+				margin: 0.15rem 0;
+			}
+
+			> p:last-child {
+				font-size: 0.9rem;
+				font-weight: 300;
+				color: #d6d6d6;
+				margin: 0.5rem 0;
+			}
+		}
+
+		.rightWrapper {
+			width: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 1.5rem;
+
+			> .searchBar {
+				width: 55%;
+				> input {
+					width: 100%;
+					height: 2.5rem;
+					border-radius: 0.25rem;
+					border: none;
+					background-color: #f0f0f0;
+					color: #000000;
+					padding: 0 1rem;
+					outline: none;
+
+					&:focus {
+						box-shadow: 0 0 10px 5px
+							rgba(48, 48, 48, 0.336);
+					}
+
+					&::placeholder {
+						color: #000000;
+						font-size: 1rem;
+					}
+				}
+			}
+
+			> .filterWrapper {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 0.5rem;
+				transition: all 0.13s ease-in-out;
+
+				&:hover {
+					background-color: #f0f0f0;
+					border-radius: 0.25rem;
+					cursor: pointer;
+
+					> svg {
+						color: #000000;
+					}
+				}
+
+				> svg {
+					color: #d6d6d6;
+					font-size: 1.25rem;
+					cursor: pointer;
+					transition: all 0.13s ease-in-out;
+				}
+			}
+		}
+	}
+
+	> .endMessage {
+		color: white;
+	}
+
+	.loadMore {
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 1rem 0;
+
+		.loader {
+			width: 60px;
+			aspect-ratio: 4;
+			--_g: no-repeat
+				radial-gradient(
+					circle closest-side,
+					#ffffff 90%,
+					#0000
+				);
+			background:
+				var(--_g) 0% 50%,
+				var(--_g) 50% 50%,
+				var(--_g) 100% 50%;
+			background-size: calc(100% / 3) 100%;
+			animation: l7 1s infinite linear;
+			scale: 0.75;
+		}
+		@keyframes l7 {
+			33% {
+				background-size:
+					calc(100% / 3) 0%,
+					calc(100% / 3) 100%,
+					calc(100% / 3) 100%;
+			}
+			50% {
+				background-size:
+					calc(100% / 3) 100%,
+					calc(100% / 3) 0%,
+					calc(100% / 3) 100%;
+			}
+			66% {
+				background-size:
+					calc(100% / 3) 100%,
+					calc(100% / 3) 100%,
+					calc(100% / 3) 0%;
+			}
+		}
+	}
+
+	> .paginationHolder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.75rem;
+		border-radius: 0.5rem;
+	}
+
+	.transactionWrapper {
+		width: 100%;
+		height: 85%;
+		max-height: 85%;
+		border-radius: 0.5rem;
+		padding: 1rem 0;
+		position: relative;
+		overflow: auto;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex-direction: column;
+
+		.transaction {
+			height: 6rem;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 2rem;
+			background-color: #191919;
+			border: 1px solid #ffffff25;
+			padding: 1rem 2rem;
+
+			&:nth-child(n + 1) {
+				margin-top: 1rem;
+			}
+
+			> svg {
+				width: 5%;
+				color: #ffffff;
+				fill: white;
+				font-size: 2.5rem;
+				cursor: pointer;
+				transition: all 0.13s ease-in-out;
+			}
+
+			> .info {
+				width: 50%;
+				max-width: 50%;
+
+				> h3 {
+					font-size: 1rem;
+					font-weight: 700;
+					color: #ffffff;
+				}
+
+				> p {
+					font-size: 0.85rem;
+					font-weight: 400;
+					color: #ffffffda;
+				}
+
+				> p:last-child {
+					font-size: 0.8rem;
+					font-weight: 300;
+					color: #ffffffb2;
+					margin: 0.5rem 0 0 0;
+				}
+			}
+
+			> .amountType {
+				width: 50%;
+				max-width: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				> p {
+					font-size: 1rem;
+					font-weight: 700;
+					color: #ffffff;
+				}
+			}
+		}
+	}
+
+	> .noTransaction {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 1.5rem;
+
+		> img {
+			width: 25%;
+			height: auto;
+		}
+
+		> p {
+			font-size: 1.25rem;
+			font-weight: 500;
+			color: #d6d6d6;
+		}
+	}
+}
+
+@media (min-width: 200px) and (max-width: 999px) {
+	.wrapper {
+		width: 100%;
+		border: 1px solid #2d2d2d;
+		height: 100%;
+		max-height: 100%;
+		border-radius: 0.5rem;
+		background-color: var(--primary-cl);
+		padding: 2rem;
+		position: relative;
+		overflow: auto;
+
+		> .loading {
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			position: absolute;
+			background-color: var(--primary-cl);
+			gap: 1.5rem;
+			z-index: 12;
+
+			> p {
+				font-size: 1rem;
+				font-weight: 500;
+				color: #d6d6d6;
+				margin: 0 0 1rem 0;
+			}
+
+			.loader {
+				width: 90px;
+				height: 14px;
+				--c: #fff 92%, #0000;
+				background:
+					radial-gradient(
+							circle closest-side,
+							var(--c)
+						)
+						calc(100% / -4) 0,
+					radial-gradient(
+							circle closest-side,
+							var(--c)
+						)
+						calc(100% / 4) 0;
+				background-size: calc(100% / 2) 100%;
+				animation: l14 1.5s infinite;
+			}
+			@keyframes l14 {
+				0% {
+					background-position:
+						calc(100% / -4) 0,
+						calc(100% / 4) 0;
+				}
+				50% {
+					background-position:
+						calc(100% / -4) -14px,
+						calc(100% / 4) 14px;
+				}
+				100% {
+					background-position:
+						calc(100% / 4) -14px,
+						calc(3 * 100% / 4) 14px;
+				}
+			}
+		}
+
+		> .upperWrapper {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: row;
+			width: 100%;
+
+			> .title {
+				width: 100%;
+				> h3 {
+					font-size: 1.25rem;
+					font-weight: 600;
+					color: #d6d6d6;
+					span {
+						color: #b4b4b4;
+						font-size: 1rem;
+					}
+				}
+
+				> p {
+					font-size: 1rem;
+					font-weight: 500;
+					color: #d6d6d6;
+					margin: 0.15rem 0;
+				}
+
+				> p:last-child {
+					font-size: 0.9rem;
+					font-weight: 300;
+					color: #d6d6d6;
+					margin: 0.5rem 0;
+				}
+			}
+
+			.rightWrapper {
+				width: 30%;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				gap: 1.5rem;
+				margin: 1rem 0;
+
+				> .searchBar {
+					width: 55%;
+					> input {
+						width: 100%;
+						height: 2.5rem;
+						border-radius: 0.25rem;
+						border: none;
+						background-color: #f0f0f0;
+						color: #000000;
+						padding: 0 1rem;
+						outline: none;
+
+						&:focus {
+							box-shadow: 0 0 10px 5px
+								rgba(48, 48, 48, 0.336);
+						}
+
+						&::placeholder {
+							color: #000000;
+							font-size: 1rem;
+						}
+					}
+				}
+
+				> .filterWrapper {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 0.5rem;
+					transition: all 0.13s ease-in-out;
+
+					&:hover {
+						background-color: #f0f0f0;
+						border-radius: 0.25rem;
+						cursor: pointer;
+
+						> svg {
+							color: #000000;
+						}
+					}
+
+					> svg {
+						color: #d6d6d6;
+						font-size: 1.25rem;
+						cursor: pointer;
+						transition: all 0.13s ease-in-out;
+					}
+				}
+			}
+		}
+
+		> .endMessage {
+			color: white;
+		}
+
+		> .paginationHolder {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0.75rem;
+			border-radius: 0.5rem;
+		}
+
+		.transactionWrapper {
+			width: 100%;
+			height: fit-content;
+			max-height: 85%;
+			background-color: var(--primary-cl);
+			border-radius: 0.5rem;
+			padding: 1rem 0;
+			position: relative;
+			overflow: hidden;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			flex-direction: column;
+
+			.transaction {
+				min-height: 6rem;
+				height: auto;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				gap: 2rem;
+				background-color: #191919;
+				border: 1px solid #ffffff25;
+				padding: 1rem 2rem;
+
+				&:nth-child(n + 2) {
+					margin-top: 1rem;
+				}
+
+				> svg {
+					width: 5%;
+					color: #ffffff;
+					fill: white;
+					font-size: 2.5rem;
+					cursor: pointer;
+					transition: all 0.13s ease-in-out;
+				}
+
+				> .info {
+					width: 70%;
+					max-width: 70%;
+
+					> h3 {
+						font-size: 1rem;
+						font-weight: 700;
+						color: #ffffff;
+					}
+
+					> p {
+						font-size: 1rem;
+						font-weight: 400;
+						color: #ffffff;
+						margin: 0.25rem 0;
+					}
+
+					> p:last-child {
+						font-size: 0.8rem;
+						font-weight: 300;
+						color: #ffffffb2;
+						margin: 0.5rem 0 0 0;
+					}
+				}
+
+				> .amountType {
+					width: 25%;
+					max-width: 25%;
+					display: flex;
+					align-items: center;
+					justify-content: flex-end;
+					> p {
+						font-size: 1rem;
+						font-weight: 700;
+						color: #ffffff;
+						text-align: right;
+					}
+				}
+			}
+		}
+
+		> .noTransaction {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			gap: 1.5rem;
+
+			> img {
+				width: 25%;
+				height: auto;
+			}
+
+			> p {
+				font-size: 1.25rem;
+				font-weight: 500;
+				color: #d6d6d6;
+			}
+		}
+	}
+}
