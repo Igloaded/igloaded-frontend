@@ -26,6 +26,10 @@ const Home = () => {
 		};
 	}, []);
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<>
 			<div className={styles.wrapper}>
@@ -117,7 +121,7 @@ const Home = () => {
 							<div className={styles.card}>
 								<FiChrome />
 								<p className={styles.title}>
-									Introducing <span>IGL PowerFetch!</span>
+									Introducing <span>PowerFetcher</span>
 								</p>
 								<h3>Web Extension</h3>
 								<p>

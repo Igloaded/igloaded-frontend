@@ -318,6 +318,7 @@ const Register = () => {
 						/>
 					</video>
 				</div>
+				<div className={styles.bg}></div>
 			</div>
 			<div className={styles.right}>
 				<div className={styles.logo}>

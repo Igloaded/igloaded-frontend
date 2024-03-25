@@ -91,6 +91,12 @@ const Statistics = () => {
 		lines: 1,
 	});
 
+	const scrolltoSection = () => {
+		TrackingWrapperRef.current.scrollIntoView({
+			behavior: 'smooth',
+		});
+	};
+
 	const handleTracking = async () => {
 		if (Cookies.get('token')) {
 			await getReelLimits()
@@ -110,6 +116,13 @@ const Statistics = () => {
 							if (trackingRemaining <= 0) {
 								showMsg(
 									'You have reached your monthly limit.',
+									'error'
+								);
+								return;
+							}
+							if (fileData.lines > 750) {
+								showMsg(
+									'You can only track 750 Posts at a time.',
 									'error'
 								);
 								return;
@@ -305,7 +318,10 @@ const Statistics = () => {
 						IG Pages in almost no time!
 					</p>
 				</div>
-				<div className={styles.getStarted}>
+				<div
+					className={styles.getStarted}
+					onClick={scrolltoSection}
+				>
 					<p>Get Started</p>
 					<MdArrowRightAlt />
 				</div>
@@ -525,7 +541,7 @@ const Statistics = () => {
 					<div
 						className={styles.getStarted}
 						onClick={() => {
-							Navigate('/profile');
+							Navigate('/');
 						}}
 					>
 						<p>Get Started</p>
