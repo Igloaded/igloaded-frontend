@@ -16,7 +16,6 @@ import { showMsg } from '../Reusable.js';
 
 const Menu = ({ isMenuOpen, data }) => {
 	const navigate = useNavigate();
-	useEffect(() => {}, [data]);
 
 	const formatNumber = (num) => {
 		const Number = parseInt(num);
@@ -29,7 +28,8 @@ const Menu = ({ isMenuOpen, data }) => {
 			Cookies.remove(cookie);
 		}
 		showMsg('Logged out successfully', 'success');
-		window.location.href = '/';
+		window.location.reload();
+		navigate('/');
 	};
 
 	return (
@@ -100,7 +100,7 @@ const Menu = ({ isMenuOpen, data }) => {
 					</div>
 					<div
 						className={styles.link}
-						onClick={() => navigate('/accept')}
+						onClick={() => navigate('/check-requests')}
 					>
 						<TbScanEye />
 						<p>Check Requests</p>

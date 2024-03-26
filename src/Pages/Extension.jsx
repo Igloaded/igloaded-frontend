@@ -9,6 +9,7 @@ import { SiBrave } from 'react-icons/si';
 import heroImg from '../assets/staticAssets/imageBrowser.png';
 import mock3 from '../assets/Ig/mock_3.png';
 import powerFetcher from '../assets/PowerFetcherv1.0.11.zip';
+import Transition from '../Transitions';
 
 const Extension = () => {
 	useEffect(() => {
@@ -21,6 +22,10 @@ const Extension = () => {
 				styles['homePage']
 			);
 		};
+	}, []);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
 	}, []);
 
 	const openUrl = (url) => {
@@ -156,4 +161,4 @@ const Extension = () => {
 	);
 };
 
-export default Extension;
+export default Transition(Extension);

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import styles from '../Styles/Privacy.module.scss';
+import Transition from '../Transitions';
 
 const Privacy = () => {
 	useEffect(() => {
@@ -16,6 +16,11 @@ const Privacy = () => {
 			);
 		};
 	}, []);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<div className={styles.main}>
 			<Header />
@@ -119,4 +124,4 @@ const Privacy = () => {
 	);
 };
 
-export default Privacy;
+export default Transition(Privacy);

@@ -8,7 +8,7 @@ import {
 	AiOutlineEye,
 } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo_igl.png';
+import logo from '../assets/IGLOADED_LOGO_WHITE.png';
 import earth from '../assets/videos/earth.mp4';
 import { toast } from 'react-toastify';
 import axios from 'axios';
@@ -21,6 +21,7 @@ import {
 	Modal,
 	closeModal,
 } from '../Components/Modal.jsx';
+import Transition from '../Transitions';
 
 const Login = () => {
 	const Navigate = useNavigate();
@@ -33,6 +34,10 @@ const Login = () => {
 	const [isPageActive, setIsPageActive] = useState(
 		!document.hidden
 	);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	useEffect(() => {
 		document.documentElement.classList.add(
@@ -110,7 +115,6 @@ const Login = () => {
 				.post(`${vars.API_URL}/user/login`, userData)
 				.then((result) => {
 					clearFields();
-					console.log(result);
 					setIsLoading(false);
 					if (result.data.status === 'ok') {
 						Cookies.set('token', result.data.token);
@@ -127,7 +131,6 @@ const Login = () => {
 				.catch(function (error) {
 					clearFields();
 					setIsLoading(false);
-					console.log(error);
 					if (error.message == 'Network Error') {
 						showMsg('Network Error', 'error');
 					}
@@ -176,7 +179,6 @@ const Login = () => {
 					>
 						<source
 							src={earth}
-							// src='https://cdn.dribbble.com/userupload/9447384/file/original-479393021d8c60e70668a75e3b5a7347.mp4'
 							type='video/mp4'
 						/>
 					</video>
@@ -261,4 +263,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default Transition(Login);

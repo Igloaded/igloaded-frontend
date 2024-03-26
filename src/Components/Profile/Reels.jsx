@@ -408,7 +408,7 @@ const Reels = () => {
 											</div>
 										</div>
 										<p>
-											UniqueId: <span>{reel.id}</span>
+											Unique Id: <span>{reel.id}</span>
 										</p>
 										<p>
 											Title: <span>{reel.title}</span>
@@ -430,7 +430,7 @@ const Reels = () => {
 													window.open(reel.fileUrl, '_blank');
 												}}
 											>
-												<p>View Xlxs File</p>
+												<p>Download Excel File</p>
 												<MdOutlineDownloading />
 											</div>
 										</div>

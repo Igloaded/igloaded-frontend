@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import styles from '../Styles/Error.module.scss';
 import lottie from 'lottie-web';
 import anmt from '../assets/error-animation.json';
+import Transition from '../Transitions';
+
 const Error = () => {
 	const animationContainer = useRef(null);
 	useEffect(() => {
@@ -17,6 +19,11 @@ const Error = () => {
 			anim.destroy();
 		};
 	}, []);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<div className={styles.main}>
 			<div
@@ -40,4 +47,4 @@ const Error = () => {
 	);
 };
 
-export default Error;
+export default Transition(Error);

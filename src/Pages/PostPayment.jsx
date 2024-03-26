@@ -19,6 +19,7 @@ import {
 } from '../Reusable.js';
 import Cookies from 'js-cookie';
 import logo from '../assets/logo_igl.png';
+import Transition from '../Transitions';
 
 const PostPayment = () => {
 	const navigate = useNavigate();
@@ -240,4 +241,4 @@ const PostPayment = () => {
 	);
 };
 
-export default PostPayment;
+export default Transition(PostPayment);

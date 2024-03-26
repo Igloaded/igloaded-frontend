@@ -37,6 +37,7 @@ import reel from '../assets/Ig/reel.png';
 import story from '../assets/Ig/story.png';
 import user from '../assets/Ig/profile.png';
 import reelDownload from '../assets/staticAssets/Reeldownload.png';
+import storyDownload from '../assets/staticAssets/story.png';
 import profileDownload from '../assets/staticAssets/profileDownload.svg';
 import defaultPic from '../assets/Ig/defaultProfile.png';
 import searchAnimation from '../assets/animations/postSearchAnim.gif';
@@ -47,8 +48,9 @@ import TrackingModal from '../Components/PublicDownloader/TrackingModal.jsx';
 import LoginModal from '../Components/PublicDownloader/LoginModal.jsx';
 import MaxReached from '../Components/PublicDownloader/MaxReachedModal.jsx';
 import Cookies from 'js-cookie';
+import Transition from '../Transitions.jsx';
 
-const Private = () => {
+const PublicMedia = () => {
 	const refreshBtn = useRef(null);
 	const [input, setInput] = useState('');
 	const [Loading, setLoading] = useState(true);
@@ -64,6 +66,10 @@ const Private = () => {
 				styles['homePage']
 			);
 		};
+	}, []);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
 	}, []);
 
 	const [usernames, setUsernames] = useState([
@@ -1224,6 +1230,22 @@ const Private = () => {
 								</p>
 							</div>
 						</div>
+						<div className={styles.guideItem}>
+							<div className={styles.itemLeft}>
+								<img
+									src={storyDownload}
+									alt=''
+								/>
+							</div>
+							<div className={styles.itemRight}>
+								<h2>Search Stories</h2>
+								<p>
+									Search for any user and view their
+									stories anonymously. Just by putting the
+									username in the search box.
+								</p>
+							</div>
+						</div>
 					</div>
 				</>
 			</div>
@@ -1232,4 +1254,4 @@ const Private = () => {
 	);
 };
 
-export default Private;
+export default Transition(PublicMedia);

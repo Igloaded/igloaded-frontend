@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import styles from '../Styles/Home.module.scss';
@@ -12,8 +12,14 @@ import mock2 from '../assets/Ig/mock_2.png';
 import mock1 from '../assets/animations/HeroHome.gif';
 import service from '../assets/animations/searchHome.gif';
 import { FiChrome } from 'react-icons/fi';
+import Transition from '../Transitions';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+	useEffect(() => {
+		window.scroll(0, 0);
+	}, []);
+
 	useEffect(() => {
 		document.documentElement.classList.add(
 			styles['homePage']
@@ -26,12 +32,9 @@ const Home = () => {
 		};
 	}, []);
 
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
-
+	const navigate = useNavigate();
 	return (
-		<>
+		<div className={styles.parentWrapper}>
 			<div className={styles.wrapper}>
 				<Header />
 				<div className={styles.background}></div>
@@ -42,15 +45,11 @@ const Home = () => {
 								The All in One <span>Analytics</span> tool
 								you'll ever <span>need</span> for IG!
 							</h1>
-							<p>
-								Search Profiles, Check Requests and much
-								more . .
-							</p>
+							<p>Analytics Made Easier with IGLOADED!</p>
 							<div
 								className={styles.submitbtn}
 								onClick={() => {
-									window.location.href =
-										'/public/download';
+									navigate('/public/download');
 								}}
 							>
 								Get Started
@@ -231,8 +230,7 @@ const Home = () => {
 								<div
 									className={styles.submitbtn}
 									onClick={() => {
-										window.location.href =
-											'/public/download';
+										navigate('/public/download');
 									}}
 								>
 									Get Started
@@ -240,7 +238,7 @@ const Home = () => {
 								<div
 									className={styles.submitbtn}
 									onClick={() => {
-										window.location.href = '/subscribe';
+										navigate('/subscribe');
 									}}
 								>
 									View Pricing
@@ -251,8 +249,8 @@ const Home = () => {
 				</div>
 				<Footer />
 			</div>
-		</>
+		</div>
 	);
 };
 
-export default Home;
+export default Transition(Home);

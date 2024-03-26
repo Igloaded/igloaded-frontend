@@ -17,6 +17,8 @@ import {
 import Cookies from 'js-cookie';
 import { vars } from '../../config.js';
 import axios from 'axios';
+import Transition from '../Transitions';
+
 const Recharge = () => {
 	const [Pricing, setPricing] = useState([
 		{
@@ -57,6 +59,10 @@ const Recharge = () => {
 		gatewayCharges: 0,
 		payableAmount: 0,
 	});
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	const getTaxAmount = (amount) => {
 		let num = Number(amount * 0);
@@ -590,4 +596,4 @@ const Recharge = () => {
 	);
 };
 
-export default Recharge;
+export default Transition(Recharge);

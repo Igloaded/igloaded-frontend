@@ -13,11 +13,13 @@ import { Link } from 'react-router-dom';
 import earth from '../assets/videos/earth.mp4';
 import { showMsg } from '../Reusable.js';
 import successTick from '../assets/staticAssets/success.png';
-import logo from '../assets/logo_igl.png';
 import axios from 'axios';
 import { MdArrowBack } from 'react-icons/md';
 import Cookies from 'js-cookie';
 import bcrypt from 'bcryptjs';
+import logo from '../assets/IGLOADED_LOGO_WHITE.png';
+
+import Transition from '../Transitions';
 
 const Register = () => {
 	const [passwordVisible, setPasswordVisible] =
@@ -59,6 +61,10 @@ const Register = () => {
 		};
 	}, []);
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	const [otpdata, setOtpData] = useState('');
 
 	const [timer, setTimer] = useState(60);
@@ -86,7 +92,6 @@ const Register = () => {
 		setIsTimerActive(true);
 	};
 	const resendMail = () => {
-		console.log('Resend Mail');
 		sendOtp();
 		StartTimer();
 	};
@@ -135,7 +140,6 @@ const Register = () => {
 
 		axios(options)
 			.then((result) => {
-				console.log(result);
 				if (result.data.status === 'ok') {
 					setOtpObj({
 						otp: result.data.otpvalue,
@@ -148,7 +152,6 @@ const Register = () => {
 				}
 			})
 			.catch((err) => {
-				console.log(err);
 				if (err.response.data.message) {
 					showMsg(err.response.data.message, 'error');
 				}
@@ -273,8 +276,6 @@ const Register = () => {
 
 	const verifyOTP = () => {
 		if (otpdata != '' && otpdata.length === 4) {
-			console.log(otpdata);
-			console.log(otpObj.otp);
 			const decryptedOtp = bcrypt.compareSync(
 				String(otpdata),
 				String(otpObj.otp)
@@ -500,4 +501,4 @@ const Register = () => {
 	);
 };
 
-export default Register;
+export default Transition(Register);

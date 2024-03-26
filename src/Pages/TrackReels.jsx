@@ -6,6 +6,7 @@ import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import CustomModal from '../Components/CustomModal';
 import { vars } from '../../config';
+import Transition from '../Transitions';
 
 import { IoAnalyticsOutline } from 'react-icons/io5';
 import {
@@ -20,6 +21,10 @@ import { IoIosArrowDropdown } from 'react-icons/io';
 const Track = () => {
 	const [currentState, setCurrentState] =
 		useState('input');
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	const [reelUrl, setreelUrl] = useState('');
 
@@ -336,4 +341,4 @@ const Track = () => {
 	);
 };
 
-export default Track;
+export default Transition(Track);

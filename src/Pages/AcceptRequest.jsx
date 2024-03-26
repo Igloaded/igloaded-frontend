@@ -35,9 +35,12 @@ import Cookies from 'js-cookie';
 import { Tooltip } from 'react-tooltip';
 import { checkPlan } from '../Routes/checkPlan.js';
 
+import Transition from '../Transitions';
+
 const { API_URL } = vars;
 const AcceptRequest = () => {
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		getPlanDetails();
 	}, []);
 
@@ -569,4 +572,4 @@ const AcceptRequest = () => {
 	);
 };
 
-export default AcceptRequest;
+export default Transition(AcceptRequest);

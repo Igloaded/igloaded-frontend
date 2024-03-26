@@ -9,11 +9,14 @@ import {
 import { Tooltip } from 'react-tooltip';
 import { SiBuymeacoffee } from 'react-icons/si';
 import logo from '../assets/IGLOADED_LOGO_WHITE.png';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
 	const OpenUrl = (url) => {
 		window.open(url, '!blank');
 	};
+
+	const navigate = useNavigate();
 
 	return (
 		<div className={styles.mainFooter}>
@@ -31,82 +34,81 @@ const Footer = () => {
 						<h3 className={styles.heading}>
 							Navigations
 						</h3>
-						<a
-							href='/check-requests'
+						<p
+							onClick={() => navigate('/check-requests')}
 							className={styles.links}
 						>
 							Check Pending Request
-						</a>
-						<a
-							href='/public/download'
+						</p>
+						<p
+							onClick={() =>
+								navigate('/public/download')
+							}
 							className={styles.links}
 						>
 							Public Downloader
-						</a>
+						</p>
 						<a
-							href='/statistics'
+							onClick={() => navigate('/statistics')}
 							className={styles.links}
 						>
 							Post Tracking
 						</a>
-						<a
-							href='/recharge'
+						<p
+							onClick={() => navigate('/recharge')}
 							className={styles.links}
 						>
 							Recharge Credits
-						</a>
-						<a
-							href='/extension/download'
-							target='_blank'
+						</p>
+						<p
+							onClick={() =>
+								navigate('/extension/download')
+							}
 							className={styles.links}
 						>
 							Download PowerFetcher
-						</a>
+						</p>
 					</div>
 					<div className={styles.contentWrapper}>
 						<h3 className={styles.heading}>Legal</h3>
-						<a
-							href='/privacy-policy'
-							target='_blank'
+						<p
+							onClick={() => navigate('/privacy-policy')}
 							className={styles.links}
 						>
 							Privacy Policy
-						</a>
-						<a
-							href='/terms-and-conditions'
-							target='_blank'
+						</p>
+						<p
+							onClick={() =>
+								navigate('/terms-and-conditions')
+							}
 							className={styles.links}
 						>
 							Terms and Conditions
-						</a>
-						<a
-							href='/refund-policy'
-							target='_blank'
+						</p>
+						<p
+							onClick={() => navigate('/refund-policy')}
 							className={styles.links}
 						>
 							Cancellation/Refund Policy
-						</a>
-						<a
-							href='/usage-policy'
-							target='_blank'
+						</p>
+						<p
+							onClick={() => navigate('/usage-policy')}
 							className={styles.links}
 						>
 							Usage Policy
-						</a>
-						<a
-							href='/contact'
-							target='_blank'
+						</p>
+						<p
+							onClick={() => navigate('/contact')}
 							className={styles.links}
 						>
 							Contact Us
-						</a>
-						<a
-							href='/about'
-							target='_blank'
+						</p>
+						<p
+							onClick={() => navigate('/about')}
 							className={styles.links}
 						>
 							About Us
-						</a>
+						</p>
 					</div>
 				</div>
 			</div>

@@ -163,45 +163,38 @@ const Header = () => {
 		{
 			key: '1',
 			label: (
-				<a
-					target='_blank'
-					href='/check-requests'
+				<p
+					onClick={() => navigate('/check-requests')}
 				>
 					Check Pending Requests
-				</a>
+				</p>
 			),
 		},
 		{
 			key: '2',
 			label: (
-				<a
-					target='_blank'
-					href='/public/download'
+				<p
+					onClick={() => navigate('/public/download')}
 				>
 					Public Downloader
-				</a>
+				</p>
 			),
 		},
 		{
 			key: '3',
 			label: (
-				<a
-					target='_blank'
-					href='/statistics'
-				>
+				<p onClick={() => navigate('/statistics')}>
 					Post Tracking
-				</a>
+					<span>(New)</span>
+				</p>
 			),
 		},
 		{
 			key: '4',
 			label: (
-				<a
-					target='_blank'
-					href='/recharge'
-				>
+				<p onClick={() => navigate('/recharge')}>
 					Recharge Credits
-				</a>
+				</p>
 			),
 		},
 	];
@@ -242,7 +235,7 @@ const Header = () => {
 				/>
 			</div>
 			<div className={styles.navContents}>
-				<a href='/'>Home</a>
+				<p onClick={() => navigate('/')}>Home</p>
 				<div className={styles.serviceWrapper}>
 					<Dropdown
 						overlayClassName={styles.menuChilds}
@@ -254,15 +247,12 @@ const Header = () => {
 							pointAtCenter: true,
 						}}
 					>
-						<a>Services</a>
+						<p>Services</p>
 					</Dropdown>
 				</div>
-				<a
-					target='_blank'
-					href='/subscribe'
-				>
+				<p onClick={() => navigate('/subscribe')}>
 					Pricing
-				</a>
+				</p>
 				<div className={styles.account}>
 					{!getUser() ? (
 						<div
@@ -274,7 +264,7 @@ const Header = () => {
 						</div>
 					) : (
 						<Dropdown
-							overlayClassName={styles.menuChilds}
+							overlayClassName={styles.profileChilds}
 							menu={{
 								items,
 							}}

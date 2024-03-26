@@ -31,6 +31,7 @@ import {
 } from '../Reusable';
 import axios from 'axios';
 import LoginModal from '../Components/PublicDownloader/LoginModal';
+import Transition from '../Transitions';
 
 const CardData = [
 	{
@@ -72,6 +73,10 @@ const Statistics = () => {
 		useState('');
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
+	useEffect(() => {
 		document.documentElement.classList.add(
 			styles['homePage']
 		);
@@ -99,8 +104,10 @@ const Statistics = () => {
 
 	const handleTracking = async () => {
 		if (Cookies.get('token')) {
+			setShowDataLoading(true);
 			await getReelLimits()
 				.then((res) => {
+					setShowDataLoading(false);
 					if (res.data.isTrackingAllowed) {
 						const trackingRemaining =
 							res.data.monthlyLimit -
@@ -541,7 +548,9 @@ const Statistics = () => {
 					<div
 						className={styles.getStarted}
 						onClick={() => {
-							Navigate('/');
+							TrackingWrapperRef.current.scrollIntoView({
+								behavior: 'smooth',
+							});
 						}}
 					>
 						<p>Get Started</p>
@@ -554,4 +563,4 @@ const Statistics = () => {
 	);
 };
 
-export default Statistics;
+export default Transition(Statistics);

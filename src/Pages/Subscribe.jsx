@@ -26,6 +26,7 @@ import {
 	epochCurrent,
 	showMsg,
 } from '../Reusable.js';
+import Transition from '../Transitions';
 
 const Subscribe = () => {
 	useEffect(() => {
@@ -38,6 +39,10 @@ const Subscribe = () => {
 				styles['homePage']
 			);
 		};
+	}, []);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
 	}, []);
 
 	const navigate = useNavigate();
@@ -1002,4 +1007,4 @@ const Subscribe = () => {
 	);
 };
 
-export default Subscribe;
+export default Transition(Subscribe);

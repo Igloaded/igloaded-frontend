@@ -10,6 +10,7 @@
 	--light-cl: #ffffff;
 	--accent-cl: #6762ff;
 	--primary-color: #0f111d;
+	font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -17,12 +18,13 @@ html {
 }
 
 .menuChilds {
-	a {
-		font-size: 0.95rem;
+	p {
+		font-size: 1rem;
 
 		> span {
-			font-size: 0.75rem;
-			color: #6762ff;
+			font-size: 0.8rem;
+			color: var(--accent-cl);
+			margin-left: 0.35rem;
 		}
 	}
 
@@ -37,6 +39,39 @@ html {
 
 			> span {
 				font-weight: 600;
+				color: var(--primary-cl);
+			}
+		}
+
+		svg {
+			font-size: 1rem;
+		}
+	}
+}
+
+.profileChilds {
+	p {
+		font-size: 1rem;
+
+		> span {
+			font-size: 1rem;
+			color: var(--accent-cl);
+			margin-left: 0.35rem;
+		}
+	}
+
+	div {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		p {
+			font-size: 1rem;
+			margin-left: 10px;
+
+			> span {
+				font-weight: 600;
+				color: var(--primary-cl);
 			}
 		}
 
@@ -95,10 +130,8 @@ html {
 		height: 100%;
 		gap: 2.5rem;
 
-		> a {
-			all: unset;
+		> p {
 			color: var(--light-cl);
-			font-family: 'Montserrat', sans-serif;
 			font-size: 1rem;
 			font-weight: 500;
 			transition: all 0.25s ease-in-out;
@@ -110,10 +143,9 @@ html {
 		}
 
 		.serviceWrapper {
-			> a {
+			> p {
 				all: unset;
 				color: var(--light-cl);
-				font-family: 'Montserrat', sans-serif;
 				font-size: 1rem;
 				font-weight: 500;
 				transition: all 0.1s ease-in-out;
@@ -142,7 +174,6 @@ html {
 				gap: 1rem;
 				border-radius: 5rem;
 				color: var(--light-cl);
-				font-family: 'Montserrat', sans-serif;
 				font-size: 1rem;
 				font-weight: 500;
 				background-color: var(--accent-cl);
@@ -227,7 +258,6 @@ html {
 			> a {
 				all: unset;
 				color: var(--light-cl);
-				font-family: 'Montserrat', sans-serif;
 				font-size: 1rem;
 				font-weight: 500;
 				transition: all 0.25s ease-in-out;
@@ -242,7 +272,6 @@ html {
 				> a {
 					all: unset;
 					color: var(--light-cl);
-					font-family: 'Montserrat', sans-serif;
 					font-size: 1.25rem;
 					font-weight: 500;
 					transition: all 0.1s ease-in-out;
@@ -271,7 +300,6 @@ html {
 					gap: 1rem;
 					border-radius: 5rem;
 					color: var(--light-cl);
-					font-family: 'Montserrat', sans-serif;
 					background-color: var(--accent-cl);
 					transition: all 0.25s ease-in-out;
 					border: 1px solid transparent;

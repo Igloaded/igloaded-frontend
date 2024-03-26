@@ -47,6 +47,7 @@ import {
 	showMsg,
 	formatNumber,
 } from '../Reusable.js';
+import Transition from '../Transitions';
 
 const Profile = () => {
 	useEffect(() => {
@@ -64,6 +65,10 @@ const Profile = () => {
 	const [isPageActive, setIsPageActive] = useState(
 		!document.hidden
 	);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	useEffect(() => {
 		const handleVisibilityChange = () => {
@@ -865,4 +870,4 @@ const Profile = () => {
 	);
 };
 
-export default Profile;
+export default Transition(Profile);

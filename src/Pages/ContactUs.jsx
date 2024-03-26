@@ -14,6 +14,7 @@ import contactus from '../assets/staticAssets/contact-us.png';
 import { showMsg } from '../Reusable.js';
 import { vars } from '../../config.js';
 import axios from 'axios';
+import Transition from '../Transitions';
 
 const Privacy = () => {
 	useEffect(() => {
@@ -26,6 +27,10 @@ const Privacy = () => {
 				styles['homePage']
 			);
 		};
+	}, []);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
 	}, []);
 
 	const getCurrentDate = () => {
@@ -231,4 +236,4 @@ const Privacy = () => {
 	);
 };
 
-export default Privacy;
+export default Transition(Privacy);

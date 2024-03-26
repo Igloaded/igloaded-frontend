@@ -15,10 +15,11 @@ import { toast } from 'react-toastify';
 import { PulseLoader } from 'react-spinners';
 import { vars } from '../../config.js';
 import successTick from '../assets/staticAssets/success.png';
-import logo from '../assets/logo_igl.png';
+import logo from '../assets/IGLOADED_LOGO_WHITE.png';
 import { MdArrowBack } from 'react-icons/md';
 import Cookies from 'js-cookie';
 import bcrypt from 'bcryptjs';
+import Transition from '../Transitions';
 
 const ForgetPassword = () => {
 	const [passwordVisible, setPasswordVisible] =
@@ -177,11 +178,10 @@ const ForgetPassword = () => {
 				}
 			})
 			.catch((err) => {
-				console.log(err);
 				setIsLoading(false);
-				if (err.response.data) {
-					showMsg(err.response.data.message, 'error');
-				}
+				// if (err.response.data) {
+				// 	showMsg(err.response.data.message, 'error');
+				// }
 			});
 	};
 
@@ -316,11 +316,11 @@ const ForgetPassword = () => {
 					>
 						<source
 							src={earth}
-							// src='https://cdn.dribbble.com/userupload/9447384/file/original-479393021d8c60e70668a75e3b5a7347.mp4'
 							type='video/mp4'
 						/>
 					</video>
 				</div>
+				<div className={styles.bg}></div>
 			</div>
 			<div className={styles.right}>
 				<div className={styles.logo}>
@@ -507,4 +507,4 @@ const ForgetPassword = () => {
 	);
 };
 
-export default ForgetPassword;
+export default Transition(ForgetPassword);
