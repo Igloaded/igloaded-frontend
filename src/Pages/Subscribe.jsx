@@ -26,6 +26,7 @@ import {
 	epochCurrent,
 	showMsg,
 } from '../Reusable.js';
+import logo_pg from '../assets/staticAssets/logo_short_1.png';
 import Transition from '../Transitions';
 
 const Subscribe = () => {
@@ -220,8 +221,7 @@ const Subscribe = () => {
 			currency: 'INR',
 			name: 'IGLoaded',
 			description: `${planName} Plan Purchase`,
-			image:
-				'https://res.cloudinary.com/dgbqsbo7g/image/upload/v1708870604/StaticAssests/favicon_hxet6p.png',
+			image: logo_pg,
 			order_id: order_id,
 			handler: function (response) {
 				console.log(response);
@@ -921,10 +921,10 @@ const Subscribe = () => {
 										className={styles.card1}
 									>
 										<div className={styles.userInfo}>
-											<img
+											{/* <img
 												src={item.image}
 												alt=''
-											/>
+											/> */}
 											<p>{item.name}</p>
 										</div>
 										<p>{item.description}</p>
@@ -941,10 +941,10 @@ const Subscribe = () => {
 										className={styles.card2}
 									>
 										<div className={styles.userInfo}>
-											<img
+											{/* <img
 												src={item.image}
 												alt=''
-											/>
+											/> */}
 											<p>{item.name}</p>
 										</div>
 										<p>{item.description}</p>

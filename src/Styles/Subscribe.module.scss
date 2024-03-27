@@ -332,7 +332,7 @@ html.homePage {
 					> .userInfo {
 						display: flex;
 						align-items: center;
-						gap: 0.5rem;
+
 						> img {
 							height: 3rem;
 							width: 3rem;
@@ -344,7 +344,6 @@ html.homePage {
 							color: var(--light-cl);
 							font-size: 1rem;
 							font-weight: 600;
-							margin: 0 0 0 0.5rem;
 						}
 					}
 
@@ -378,7 +377,7 @@ html.homePage {
 					> .userInfo {
 						display: flex;
 						align-items: center;
-						gap: 0.5rem;
+
 						> img {
 							height: 3rem;
 							width: 3rem;
@@ -390,7 +389,6 @@ html.homePage {
 							color: var(--light-cl);
 							font-size: 1rem;
 							font-weight: 600;
-							margin: 0 0 0 0.5rem;
 						}
 					}
 
@@ -854,7 +852,7 @@ html.homePage {
 						> .userInfo {
 							display: flex;
 							align-items: center;
-							gap: 0.5rem;
+
 							> img {
 								height: 3rem;
 								width: 3rem;
@@ -866,7 +864,6 @@ html.homePage {
 								color: var(--light-cl);
 								font-size: 1rem;
 								font-weight: 600;
-								margin: 0 0 0 0.5rem;
 							}
 						}
 
@@ -900,19 +897,11 @@ html.homePage {
 						> .userInfo {
 							display: flex;
 							align-items: center;
-							gap: 0.5rem;
-							> img {
-								height: 3rem;
-								width: 3rem;
-								border-radius: 50%;
-								object-fit: cover;
-							}
 
 							> p {
 								color: var(--light-cl);
 								font-size: 1rem;
 								font-weight: 600;
-								margin: 0 0 0 0.5rem;
 							}
 						}
 

@@ -181,9 +181,9 @@ html.homePage {
 			}
 
 			.submitbtn {
-				width: 70%;
+				width: fit-content;
+				padding: 1rem 15%;
 				margin: 2rem 0 0 0;
-				padding: 1rem 10%;
 				border-radius: 0.3rem;
 				background-color: var(--accent-cl);
 				border: 1px solid transparent;

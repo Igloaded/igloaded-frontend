@@ -17,6 +17,7 @@ import {
 import Cookies from 'js-cookie';
 import { vars } from '../../config.js';
 import axios from 'axios';
+import logo_pg from '../assets/staticAssets/logo_short_1.png';
 import Transition from '../Transitions';
 
 const Recharge = () => {
@@ -233,8 +234,7 @@ const Recharge = () => {
 			currency: 'INR',
 			name: 'IGLoaded',
 			description: 'Credits Purchase',
-			image:
-				'https://res.cloudinary.com/dgbqsbo7g/image/upload/v1708870604/StaticAssests/favicon_hxet6p.png',
+			image: logo_pg,
 			order_id: order_id,
 			handler: function (response) {
 				console.log(response);
