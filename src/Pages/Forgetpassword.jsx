@@ -24,6 +24,9 @@ import Transition from '../Transitions';
 const ForgetPassword = () => {
 	const [passwordVisible, setPasswordVisible] =
 		useState(false);
+
+	const [repasswordVisible, setRepasswordVisible] =
+		useState(false);
 	const [currentState, setCurrentState] =
 		useState('register');
 
@@ -34,15 +37,6 @@ const ForgetPassword = () => {
 		password: '',
 		Againpassword: '',
 	});
-
-	// const [isPageActive, setIsPageActive] = useState(
-	// 	!document.hidden
-	// );
-	// useEffect(() => {
-	// 	if (Cookies.get('token')) {
-	// 		window.location.href = '/';
-	// 	}
-	// }, [isPageActive]);
 
 	useEffect(() => {
 		document.documentElement.classList.add(
@@ -274,6 +268,7 @@ const ForgetPassword = () => {
 				axios(Options)
 					.then((res) => {
 						if (res.data.status === 'ok') {
+							removeAllCookies();
 							setCurrentState('success');
 							showMsg('Password Changed', 'success');
 						}
@@ -474,7 +469,7 @@ const ForgetPassword = () => {
 						<div className={styles.passwordWrapper}>
 							<input
 								type={
-									passwordVisible ? 'text' : 'password'
+									repasswordVisible ? 'text' : 'password'
 								}
 								placeholder='Again New Password'
 								onChange={(data) => {
@@ -484,13 +479,17 @@ const ForgetPassword = () => {
 									});
 								}}
 							/>
-							{passwordVisible ? (
+							{repasswordVisible ? (
 								<AiOutlineEye
-									onClick={() => setPasswordVisible(false)}
+									onClick={() =>
+										setRepasswordVisible(false)
+									}
 								/>
 							) : (
 								<AiOutlineEyeInvisible
-									onClick={() => setPasswordVisible(true)}
+									onClick={() =>
+										setRepasswordVisible(true)
+									}
 								/>
 							)}
 						</div>

@@ -1243,8 +1243,7 @@ html.homePage {
 
 			.profileWrapper {
 				background-color: white;
-				min-height: 60vh;
-				max-height: fit-content;
+				min-height: 50vh;
 				width: 100%;
 				border-radius: 2rem;
 				margin: 0;
@@ -1261,14 +1260,18 @@ html.homePage {
 					background-color: #000000;
 					border-top-left-radius: 2rem;
 					border-top-right-radius: 2rem;
-					position: relative;
+					position: static;
 					background-image: url('../assets/staticAssets/background_profile_2.svg');
 					background-size: cover;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 2rem 0;
 					// opacity: 0.5;
 
 					> img {
-						position: absolute;
-						bottom: -7.5rem;
+						position: static;
+						top: 0rem;
 						left: calc(50% - 7.5rem);
 						border: 3px solid var(--light-cl);
 						border-radius: 100%;
@@ -1284,7 +1287,7 @@ html.homePage {
 					align-items: center;
 					flex-direction: column;
 					gap: 0.25rem;
-					margin: 8rem 0 0 0;
+					margin: 2rem 0;
 
 					> .username {
 						font-size: 1.5rem;

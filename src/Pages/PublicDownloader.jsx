@@ -3,9 +3,7 @@ import React, {
 	useState,
 	useRef,
 } from 'react';
-
 import { BsStars } from 'react-icons/bs';
-
 import { FaPlay, FaPause } from 'react-icons/fa';
 import {
 	HiHeart,
@@ -42,6 +40,8 @@ import profileDownload from '../assets/staticAssets/profileDownload.svg';
 import defaultPic from '../assets/Ig/defaultProfile.png';
 import searchAnimation from '../assets/animations/postSearchAnim.gif';
 import { vars } from '../../config.js';
+
+import { formatNumber } from '../Reusable.js';
 
 import UserStory from '../Components/PublicDownloader/UserStory.jsx';
 import TrackingModal from '../Components/PublicDownloader/TrackingModal.jsx';
@@ -898,15 +898,17 @@ const PublicMedia = () => {
 							)}
 							<div className={styles.stats}>
 								<div className={styles.stat}>
-									<p>{userInfo.followers}</p>
+									<p>{formatNumber(userInfo.followers)}</p>
 									<p>Followers</p>
 								</div>
 								<div className={styles.stat}>
-									<p>{userInfo.media_count}</p>
+									<p>
+										{formatNumber(userInfo.media_count)}
+									</p>
 									<p>Posts</p>
 								</div>
 								<div className={styles.stat}>
-									<p>{userInfo.following}</p>
+									<p>{formatNumber(userInfo.following)}</p>
 									<p>Following</p>
 								</div>
 							</div>

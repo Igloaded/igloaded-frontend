@@ -2,6 +2,7 @@
 
 html.homePage {
 	font-size: 100%;
+	font-family: 'Poppins', sans-serif;
 }
 
 .wrapper {
@@ -115,8 +116,7 @@ html.homePage {
 			h2 {
 				font-size: 2rem;
 				font-weight: 600;
-				margin: 0 0 1rem 0;
-				font-family: 'Metropolis', sans-serif;
+				margin: 0 0 0.5rem 0;
 			}
 
 			> p {
@@ -366,7 +366,6 @@ html.homePage {
 					font-size: 2rem;
 					font-weight: 600;
 					margin: 0 0 1rem 0;
-					font-family: 'Metropolis', sans-serif;
 				}
 
 				> p {

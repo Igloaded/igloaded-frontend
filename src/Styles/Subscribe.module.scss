@@ -483,7 +483,7 @@ html.homePage {
 			backdrop-filter: blur(5px);
 			-webkit-backdrop-filter: blur(5px);
 			margin: 2rem 0;
-			border: 1px solid rgba(255, 255, 255, 0.34);
+			border: 1px solid rgba(255, 255, 255, 0.19);
 			border-radius: 0.5rem;
 			width: 50%;
 			min-height: 30vh;
@@ -520,10 +520,10 @@ html.homePage {
 				text-align: center;
 
 				&:hover {
-					background-color: var(--primary-cl);
+					background-color: transparent;
+					box-shadow: 0 0 5rem 0.1rem #5a54ffae;
+					border: 1px solid rgba(128, 128, 128, 0.257);
 					cursor: pointer;
-					border: 1px solid var(--light-cl);
-					box-shadow: 10px 15px 56px -10px var(--accent-cl);
 				}
 
 				&:active {
@@ -997,7 +997,6 @@ html.homePage {
 				backdrop-filter: blur(5px);
 				-webkit-backdrop-filter: blur(5px);
 				margin: 2rem 0;
-				border: 1px solid rgba(255, 255, 255, 0.34);
 				border-radius: 0.5rem;
 				width: 90%;
 				min-height: 30vh;
@@ -1034,18 +1033,6 @@ html.homePage {
 					font-size: 1.1rem;
 					transition: all 0.15s ease-in-out;
 					text-align: center;
-
-					&:hover {
-						background-color: var(--primary-cl);
-						cursor: pointer;
-						border: 1px solid var(--light-cl);
-						box-shadow: 10px 15px 56px -10px var(--accent-cl);
-					}
-
-					&:active {
-						transform: scale(0.97);
-						box-shadow: 10px 15px 56px -10px var(--accent-cl);
-					}
 				}
 			}
 		}
