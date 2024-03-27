@@ -18,7 +18,7 @@ import { MdArrowBack } from 'react-icons/md';
 import Cookies from 'js-cookie';
 import bcrypt from 'bcryptjs';
 import logo from '../assets/IGLOADED_LOGO_WHITE.png';
-
+import { PulseLoader } from 'react-spinners';
 import Transition from '../Transitions';
 
 const Register = () => {
@@ -31,6 +31,8 @@ const Register = () => {
 		otp: '',
 		timestamp: 0,
 	});
+
+	const [isLoading, setLoading] = useState(false);
 
 	const navigate = useNavigate();
 	const [userData, setUserData] = useState({
@@ -140,6 +142,8 @@ const Register = () => {
 
 		axios(options)
 			.then((result) => {
+				setLoading(false);
+				setCurrentState('verification');
 				if (result.data.status === 'ok') {
 					setOtpObj({
 						otp: result.data.otpvalue,
@@ -212,6 +216,8 @@ const Register = () => {
 			return;
 		}
 
+		setLoading(true);
+
 		const options = {
 			method: 'GET',
 			url: `${vars.API_URL}/user/userExist?email=${userData.email}`,
@@ -225,13 +231,14 @@ const Register = () => {
 			.then((result) => {
 				if (result.data.status === 'ok') {
 					sendOtp();
-					setCurrentState('verification');
 				} else {
+					setLoading(false);
 					showMsg('Something went wrong', 'error');
 				}
 			})
 			.catch((err) => {
 				console.log(err);
+				setLoading(false);
 				if (
 					err.response.data.message.toLowerCase() ==
 					'User Found'.toLowerCase()
@@ -259,6 +266,7 @@ const Register = () => {
 
 		axios(options)
 			.then((result) => {
+				setLoading(false);
 				if (result.data.status === 'ok') {
 					setCurrentState('success');
 					showMsg('Account created!', 'success');
@@ -266,6 +274,7 @@ const Register = () => {
 			})
 			.catch((err) => {
 				console.log(err);
+				setLoading(false);
 				if (err.response.data.message) {
 					showMsg(err.response.data.message, 'error');
 				}
@@ -281,6 +290,7 @@ const Register = () => {
 				String(otpObj.otp)
 			);
 			if (decryptedOtp) {
+				setLoading(true);
 				createUser();
 			} else {
 				showMsg('Incorrect OTP', 'error');
@@ -293,6 +303,8 @@ const Register = () => {
 					);
 				}
 			}
+		} else {
+			showMsg('Please enter the OTP', 'error');
 		}
 	};
 
@@ -407,7 +419,14 @@ const Register = () => {
 							className={styles.submitbtn}
 							onClick={registerUser}
 						>
-							Sign Up
+							<p>Sign Up</p>
+							{isLoading && (
+								<PulseLoader
+									color='#fff'
+									size={7}
+									margin={2}
+								/>
+							)}
 						</div>
 						<p className={styles.signUplabel}>
 							Already have an account?{' '}
@@ -472,6 +491,13 @@ const Register = () => {
 							onClick={verifyOTP}
 						>
 							<span>Submit</span>
+							{isLoading && (
+								<PulseLoader
+									color='#fff'
+									size={7}
+									margin={2}
+								/>
+							)}
 						</div>
 					</div>
 				)}

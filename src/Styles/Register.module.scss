@@ -211,7 +211,7 @@ html.homePage {
 			}
 
 			.submitbtn {
-				width: fit-content;
+				width: 50%;
 				padding: 1rem 15%;
 				margin: 2rem 0 0 0;
 				border-radius: 0.3rem;
@@ -222,6 +222,15 @@ html.homePage {
 				font-size: 1.1rem;
 				transition: all 0.15s ease-in-out;
 				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0.5rem;
+
+				> p {
+					font-size: 1rem;
+					color: white;
+				}
 
 				&:hover {
 					background-color: var(--primary-cl);
@@ -259,16 +268,26 @@ html.homePage {
 			display: flex;
 			flex-direction: column;
 			color: white;
+			padding: 2rem;
+			color: #f1f1f1;
+			background: rgba(103, 98, 255, 0.1);
+			box-shadow: 0 0 10rem 1rem
+				rgba(31, 38, 135, 0.668);
+			backdrop-filter: blur(2px);
+			-webkit-backdrop-filter: blur(2px);
+			border-radius: 10px;
+			border: 1px solid #d3d3d316;
+			overflow-y: auto;
 
 			h2 {
-				font-size: 2.5rem;
+				font-size: 2rem;
 			}
 
-			// p {
-			// 	font-size: 1rem;
-			// 	margin: 0.5rem 0 0 0;
-			// 	color: #e4e4e4;
-			// }
+			p {
+				font-size: 1rem;
+				margin: 0.5rem 0 0 0;
+				color: #e4e4e4;
+			}
 
 			.ResendOtplabel {
 				margin: 2rem 0 0 0;
@@ -302,8 +321,8 @@ html.homePage {
 					text-align: center;
 					width: 10%;
 					aspect-ratio: 1;
-					border: 1px solid #afafaf;
-					background-color: var(--primary-cl);
+					border: 1px solid #afafaf59;
+					background-color: transparent;
 					caret-color: white;
 					color: white;
 
@@ -318,7 +337,7 @@ html.homePage {
 				}
 			}
 			.submitbtn {
-				width: fit-content;
+				width: 50%;
 				margin: 2rem 0 0 0;
 				padding: 1rem 10%;
 				border-radius: 0.3rem;
@@ -327,6 +346,10 @@ html.homePage {
 				color: #fff;
 				font-weight: 500;
 				font-size: 1.1rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0.5rem;
 				transition: all 0.15s ease-in-out;
 
 				&:hover {
@@ -350,13 +373,15 @@ html.homePage {
 			text-align: center;
 			color: #fff;
 			background: rgba(103, 98, 255, 0.1);
-			box-shadow: 0 8px 32px 0
-				rgba(31, 38, 135, 0.37);
+			box-shadow: 0 0 10rem 1rem
+				rgba(31, 38, 135, 0.668);
 			backdrop-filter: blur(2px);
 			-webkit-backdrop-filter: blur(2px);
 			border-radius: 10px;
+			border: 1px solid #d3d3d316;
 			border: 1px solid rgba(255, 255, 255, 0.18);
 			padding: 3rem 0;
+			overflow-y: auto;
 
 			.animationContainer {
 				height: 40%;
@@ -367,8 +392,8 @@ html.homePage {
 				justify-content: center;
 
 				> img {
-					height: 10rem;
-					width: 10rem;
+					height: 7rem;
+					width: 7rem;
 				}
 			}
 
@@ -646,6 +671,10 @@ html.homePage {
 					font-size: 1.1rem;
 					transition: all 0.15s ease-in-out;
 					text-align: center;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 0.5rem;
 
 					&:hover {
 						background-color: var(--primary-cl);
@@ -694,11 +723,11 @@ html.homePage {
 					font-size: 2rem;
 				}
 
-				// p {
-				// 	font-size: 1rem;
-				// 	margin: 0.5rem 0 0 0;
-				// 	color: #e4e4e4;
-				// }
+				p {
+					font-size: 1rem;
+					margin: 0.5rem 0 0 0;
+					color: var(--primary-cl);
+				}
 
 				.ResendOtplabel {
 					margin: 2rem 0 0 0;
@@ -757,6 +786,10 @@ html.homePage {
 					color: #fff;
 					font-weight: 500;
 					font-size: 1.1rem;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 0.5rem;
 					transition: all 0.15s ease-in-out;
 
 					&:hover {
