@@ -221,7 +221,8 @@ const Subscribe = () => {
 			currency: 'INR',
 			name: 'IGLoaded',
 			description: `${planName} Plan Purchase`,
-			image: logo_pg,
+			image:
+				'https://res.cloudinary.com/dgbqsbo7g/image/upload/v1711527907/StaticAssests/logo_short_1_hjm7t2.png',
 			order_id: order_id,
 			handler: function (response) {
 				console.log(response);
