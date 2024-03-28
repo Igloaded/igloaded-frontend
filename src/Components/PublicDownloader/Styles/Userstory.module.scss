@@ -179,12 +179,63 @@
 		border-radius: 1.5rem;
 		margin: 2rem 0;
 
+		> .noStory {
+			width: 100%;
+			height: fit-content;
+			border-radius: 0.5rem;
+			border: 1px solid rgba(255, 255, 255, 0.208);
+			padding: 2rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			overflow: hidden;
+
+			> img {
+				width: 10rem;
+				height: 10rem;
+				transform: rotate(35deg);
+				object-fit: contain;
+			}
+
+			> p {
+				font-size: 1.5rem;
+				font-weight: 500;
+				color: #ffffff;
+				margin: 1rem 0;
+			}
+
+			> .btn {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 35%;
+				min-height: 3rem;
+				border-radius: 0.5rem;
+				margin: 0rem 0;
+				border: 1px solid transparent;
+				transition: all 0.15s ease-in-out;
+				color: white;
+				background-color: var(--accent-cl);
+
+				&:active {
+					transform: scale(0.97);
+				}
+
+				&:hover {
+					border: 1px solid #ffffff;
+					background-color: transparent;
+					cursor: pointer;
+				}
+			}
+		}
+
 		.swiperwrapper {
 			user-select: none;
 			width: 100%;
 
 			.card {
-				border: 2px solid var(--accent-cl);
+				border: 2px solid transparent;
 				width: 25%;
 				aspect-ratio: 9/16;
 				background-color: black;
@@ -221,10 +272,12 @@
 
 						&:nth-child(1) {
 							border-radius: 1rem 0 0 0;
+							padding: 1rem;
 						}
 
 						&:nth-child(2) {
 							border-radius: 0 0 1rem 0;
+							display: none;
 						}
 
 						&:active {
@@ -232,7 +285,7 @@
 						}
 
 						> svg {
-							font-size: 1.75rem;
+							font-size: 2rem;
 						}
 
 						&:hover {
