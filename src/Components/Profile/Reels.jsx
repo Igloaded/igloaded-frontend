@@ -262,7 +262,7 @@ const Reels = () => {
 		<div className={styles.trackReelsWrapper}>
 			{loading && (
 				<div className={styles.loading}>
-					<div class={styles.loader}></div>
+					<div className={styles.loader}></div>
 					<p>Fetching Reels</p>
 				</div>
 			)}

@@ -36,7 +36,7 @@ import story from '../assets/Ig/story.png';
 import user from '../assets/Ig/profile.png';
 import reelDownload from '../assets/staticAssets/Reeldownload.png';
 import storyDownload from '../assets/staticAssets/story.png';
-import profileDownload from '../assets/staticAssets/profileDownload.svg';
+import profileDownload from '../assets/staticAssets/profileDownload.png';
 import defaultPic from '../assets/Ig/defaultProfile.png';
 import searchAnimation from '../assets/animations/postSearchAnim.gif';
 import { vars } from '../../config.js';
@@ -728,9 +728,9 @@ const PublicMedia = () => {
 						setIsLoginModalOpen(false);
 					}}
 					data={{
-						title: 'Seems You Loved It!',
+						title: 'Wanna Search?',
 						description:
-							'Please login to continue searching',
+							'Please login to IGLOADED to continue searching',
 					}}
 				/>
 			)}

@@ -46,10 +46,14 @@ const App = () => {
 						index
 						element={<Home />}
 					/>
-					<Route
+					{/* <Route
 						path='/private/download'
 						element={<PrivateDownload />}
-					/>
+					/> */}
+					{/* <Route
+						path='/private'
+						element={<PrivateMedia />}
+					/> */}
 					<Route
 						path='/recharge'
 						element={<Recharge />}
@@ -89,10 +93,6 @@ const App = () => {
 					<Route
 						path='/profile'
 						element={<Profile />}
-					/>
-					<Route
-						path='/private'
-						element={<PrivateMedia />}
 					/>
 					<Route
 						path='/privacy-policy'

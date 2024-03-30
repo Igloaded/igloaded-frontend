@@ -22,7 +22,6 @@ import {
 } from 'react-icons/ai';
 
 import { PiFileZipBold } from 'react-icons/pi';
-import fileDownload from 'js-file-download';
 import {
 	ToastContainer,
 	toast,

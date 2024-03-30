@@ -36,6 +36,8 @@ import { Tooltip } from 'react-tooltip';
 import { checkPlan } from '../Routes/checkPlan.js';
 
 import Transition from '../Transitions';
+import { showMsg } from '../Reusable.js';
+import LoginModal from '../Components/PublicDownloader/LoginModal.jsx';
 
 const { API_URL } = vars;
 const AcceptRequest = () => {
@@ -126,6 +128,10 @@ const AcceptRequest = () => {
 	};
 
 	const validateData = () => {
+		if (!Cookies.get('token')) {
+			setShowModal(true);
+			return;
+		}
 		if (userData.username === '') {
 			const newErrorData = {
 				...errorData,
@@ -145,6 +151,9 @@ const AcceptRequest = () => {
 		}
 	};
 
+	const [showModal, setShowModal] =
+		useState(false);
+
 	const getInstagramLogin = async () => {
 		setState('loading');
 		const options = {
@@ -158,10 +167,10 @@ const AcceptRequest = () => {
 		};
 		axios(options)
 			.then((res) => {
+				console.log(res);
 				getRequests();
 			})
 			.catch((error) => {
-				console.log(error);
 				setState('login');
 				if (
 					error.response.data.message ==
@@ -210,6 +219,21 @@ const AcceptRequest = () => {
 							error.response.data.messageDetail,
 					};
 					ShowModal(newErrorData);
+				} else if (
+					error.response.data.message ==
+					'Invalid Backup Code'
+				) {
+					const newErrorData = {
+						title: 'Invalid Backup Code',
+						description:
+							error.response.data.messageDetail,
+					};
+					ShowModal(newErrorData);
+				} else if (
+					error.response.data.message ==
+					'Invalid Token'
+				) {
+					setShowModal(true);
 				}
 			});
 	};
@@ -361,6 +385,18 @@ const AcceptRequest = () => {
 	return (
 		<>
 			<div className={styles.main}>
+				{showModal && (
+					<LoginModal
+						data={{
+							title: 'Wanna try this?',
+							description:
+								'Login to IGLOADED to get started & use this feature!',
+						}}
+						close={() => {
+							setShowModal(false);
+						}}
+					/>
+				)}
 				<Header />
 				<div className={styles.bgImageWrapper}></div>
 				<div className={styles.hero}>
