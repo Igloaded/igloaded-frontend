@@ -79,6 +79,18 @@ const PublicMedia = () => {
 			role: 'Owner',
 			badgeColor: 'red',
 		},
+		{
+			id: 1,
+			username: 'adit.yaml',
+			role: 'Owner',
+			badgeColor: 'red',
+		},
+		{
+			id: 1,
+			username: 'adidecodes',
+			role: 'Owner',
+			badgeColor: 'red',
+		},
 	]);
 	const [media, setMedia] = useState('');
 	const [URLdata, setURLData] = useState({

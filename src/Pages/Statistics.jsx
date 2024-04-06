@@ -38,7 +38,7 @@ const CardData = [
 		id: 1,
 		title: 'Step 1',
 		description:
-			'Create a .txt file and add the urls of the posts you want to track line by line (Don’t Leave any additional empty lines).',
+			'Create a .txt file and add the urls of the posts you want to track line by line',
 		image: step1,
 	},
 	{

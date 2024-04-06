@@ -24,7 +24,7 @@ import { Tooltip } from 'react-tooltip';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-import styles from '../Styles/privateDownload.module.scss';
+import styles from '../Styles/PrivateDownload.module.scss';
 
 import Header from '../Components/Header.jsx';
 import Footer from '../Components/Footer.jsx';
@@ -37,10 +37,8 @@ import reelDownload from '../assets/staticAssets/Reeldownload.png';
 import storyDownload from '../assets/staticAssets/story.png';
 import profileDownload from '../assets/staticAssets/profileDownload.png';
 import defaultPic from '../assets/Ig/defaultProfile.png';
-import searchAnimation from '../assets/animations/postSearchAnim.gif';
 import detective from '../assets/staticAssets/detective.png';
 import { vars } from '../../config.js';
-
 import { formatNumber } from '../Reusable.js';
 
 import UserStory from '../Components/PublicDownloader/UserStory.jsx';

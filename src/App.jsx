@@ -46,14 +46,14 @@ const App = () => {
 						index
 						element={<Home />}
 					/>
-					{/* <Route
+					<Route
 						path='/private/download'
 						element={<PrivateDownload />}
-					/> */}
-					{/* <Route
+					/>
+					<Route
 						path='/private'
 						element={<PrivateMedia />}
-					/> */}
+					/>
 					<Route
 						path='/recharge'
 						element={<Recharge />}

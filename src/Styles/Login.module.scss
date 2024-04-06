@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.cdnfonts.com/css/metropolis-2');
 
 html.homePage {
@@ -9,8 +16,11 @@ html.homePage {
 	height: 100vh;
 	max-height: 100vh;
 	overflow: hidden;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	font-size: 100%;
 	background-color: var(--primary-cl);
@@ -24,15 +34,25 @@ html.homePage {
 		cursor: pointer;
 		background-color: white;
 		z-index: 100;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
 		padding: 1rem;
 		border-radius: 100%;
 		aspect-ratio: 1;
+		-webkit-transition: all 0.15s ease-in-out;
+		-o-transition: all 0.15s ease-in-out;
 		transition: all 0.15s ease-in-out;
 
 		&:hover {
+			-webkit-transform: scale(1.05);
+			-ms-transform: scale(1.05);
 			transform: scale(1.05);
 		}
 
@@ -63,6 +83,18 @@ html.homePage {
 				left: 0;
 				width: 100%;
 				height: 100%;
+				background: -webkit-gradient(
+					linear,
+					left top,
+					right top,
+					color-stop(25%, rgba(0, 0, 0, 0)),
+					to(var(--primary-cl))
+				);
+				background: -o-linear-gradient(
+					left,
+					rgba(0, 0, 0, 0) 25%,
+					var(--primary-cl) 100%
+				);
 				background: linear-gradient(
 					to right,
 					rgba(0, 0, 0, 0) 25%,
@@ -74,13 +106,19 @@ html.homePage {
 			video {
 				width: 100%;
 				height: 100%;
+				-o-object-fit: cover;
 				object-fit: cover;
 			}
 		}
 	}
 
 	.right {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
 		flex-direction: column;
 		width: 50%;
 		height: 100%;
@@ -101,6 +139,8 @@ html.homePage {
 			padding: 2rem;
 			color: #f1f1f1;
 			background: rgba(103, 98, 255, 0.1);
+			-webkit-box-shadow: 0 0 10rem 1rem
+				rgba(31, 38, 135, 0.668);
 			box-shadow: 0 0 10rem 1rem
 				rgba(31, 38, 135, 0.668);
 			backdrop-filter: blur(2px);
@@ -112,6 +152,8 @@ html.homePage {
 			&::-webkit-scrollbar {
 				display: none;
 			}
+
+			scrollbar-width: none;
 
 			h2 {
 				font-size: 2rem;
@@ -141,6 +183,22 @@ html.homePage {
 					border: 1px solid transparent;
 					outline: 1px solid var(--accent-cl);
 				}
+				&::-webkit-input-placeholder {
+					font-size: 1rem;
+					color: rgb(255, 255, 255);
+				}
+				&::-moz-placeholder {
+					font-size: 1rem;
+					color: rgb(255, 255, 255);
+				}
+				&:-ms-input-placeholder {
+					font-size: 1rem;
+					color: rgb(255, 255, 255);
+				}
+				&::-ms-input-placeholder {
+					font-size: 1rem;
+					color: rgb(255, 255, 255);
+				}
 				&::placeholder {
 					font-size: 1rem;
 					color: rgb(255, 255, 255);
@@ -148,8 +206,14 @@ html.homePage {
 			}
 
 			.passwordWrapper {
+				display: -webkit-box;
+				display: -ms-flexbox;
 				display: flex;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
 				align-items: center;
+				-webkit-box-pack: justify;
+				-ms-flex-pack: justify;
 				justify-content: space-between;
 				width: 100%;
 				margin: 1rem 0 0 0;
@@ -181,6 +245,8 @@ html.homePage {
 			}
 
 			.submitbtn {
+				width: -webkit-fit-content;
+				width: -moz-fit-content;
 				width: fit-content;
 				padding: 1rem 15%;
 				margin: 2rem 0 0 0;
@@ -191,9 +257,17 @@ html.homePage {
 				font-weight: 500;
 				font-size: 1.1rem;
 				text-align: center;
+				-webkit-transition: all 0.15s ease-in-out;
+				-o-transition: all 0.15s ease-in-out;
 				transition: all 0.15s ease-in-out;
+				display: -webkit-box;
+				display: -ms-flexbox;
 				display: flex;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
 				align-items: center;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
 				justify-content: center;
 				gap: 0.5rem;
 
@@ -201,11 +275,15 @@ html.homePage {
 					background-color: var(--primary-cl);
 					cursor: pointer;
 					border: 1px solid grey;
+					-webkit-box-shadow: 7px 5px 60px -14px var(--accent-cl);
 					box-shadow: 7px 5px 60px -14px var(--accent-cl);
 				}
 
 				&:active {
+					-webkit-transform: scale(0.97);
+					-ms-transform: scale(0.97);
 					transform: scale(0.97);
+					-webkit-box-shadow: 7px 5px 56px -10px var(--accent-cl);
 					box-shadow: 7px 5px 56px -10px var(--accent-cl);
 				}
 			}
@@ -240,9 +318,15 @@ html.homePage {
 		height: 100vh;
 		max-height: 100vh;
 		overflow: hidden;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
 		flex-direction: column;
 		width: 100%;
+		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 		font-size: 100%;
 		background-color: var(--primary-cl);
@@ -256,15 +340,25 @@ html.homePage {
 			cursor: pointer;
 			background-color: white;
 			z-index: 100;
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
 			align-items: center;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
 			justify-content: center;
 			padding: 1rem;
 			border-radius: 100%;
 			aspect-ratio: 1;
+			-webkit-transition: all 0.15s ease-in-out;
+			-o-transition: all 0.15s ease-in-out;
 			transition: all 0.15s ease-in-out;
 
 			&:hover {
+				-webkit-transform: scale(1.05);
+				-ms-transform: scale(1.05);
 				transform: scale(1.05);
 			}
 
@@ -297,6 +391,18 @@ html.homePage {
 					left: 0;
 					width: 100%;
 					height: 100%;
+					background: -webkit-gradient(
+						linear,
+						left top,
+						right top,
+						color-stop(25%, rgba(0, 0, 0, 0)),
+						to(var(--primary-cl))
+					);
+					background: -o-linear-gradient(
+						left,
+						rgba(0, 0, 0, 0) 25%,
+						var(--primary-cl) 100%
+					);
 					background: linear-gradient(
 						to right,
 						rgba(0, 0, 0, 0) 25%,
@@ -308,6 +414,7 @@ html.homePage {
 				video {
 					width: 100%;
 					height: 100%;
+					-o-object-fit: cover;
 					object-fit: cover;
 				}
 			}
@@ -322,9 +429,18 @@ html.homePage {
 		}
 
 		.right {
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
 			align-items: center;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
 			justify-content: center;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
 			flex-direction: column;
 			width: 100%;
 			height: 100%;
@@ -337,10 +453,18 @@ html.homePage {
 				position: absolute;
 				bottom: 2rem;
 				left: 50%;
+				-webkit-transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
 				transform: translateX(-50%);
 				margin: 1rem 0;
+				display: -webkit-box;
+				display: -ms-flexbox;
 				display: flex;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
 				align-items: center;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
 				justify-content: center;
 				> img {
 					width: 10rem;
@@ -350,11 +474,15 @@ html.homePage {
 
 			.main {
 				min-height: 50vh;
+				height: -webkit-fit-content;
+				height: -moz-fit-content;
 				height: fit-content;
 				width: 95%;
 				padding: 2rem;
 				color: #000000;
 				background: #e6e6e6;
+				-webkit-box-shadow: 0 8px 32px 0
+					rgba(31, 38, 135, 0.37);
 				box-shadow: 0 8px 32px 0
 					rgba(31, 38, 135, 0.37);
 				backdrop-filter: blur(2px);
@@ -390,6 +518,22 @@ html.homePage {
 						border: 1px solid transparent;
 						outline: 1px solid var(--accent-cl);
 					}
+					&::-webkit-input-placeholder {
+						font-size: 1rem;
+						color: rgb(25, 25, 25);
+					}
+					&::-moz-placeholder {
+						font-size: 1rem;
+						color: rgb(25, 25, 25);
+					}
+					&:-ms-input-placeholder {
+						font-size: 1rem;
+						color: rgb(25, 25, 25);
+					}
+					&::-ms-input-placeholder {
+						font-size: 1rem;
+						color: rgb(25, 25, 25);
+					}
 					&::placeholder {
 						font-size: 1rem;
 						color: rgb(25, 25, 25);
@@ -397,8 +541,14 @@ html.homePage {
 				}
 
 				.passwordWrapper {
+					display: -webkit-box;
+					display: -ms-flexbox;
 					display: flex;
+					-webkit-box-align: center;
+					-ms-flex-align: center;
 					align-items: center;
+					-webkit-box-pack: justify;
+					-ms-flex-pack: justify;
 					justify-content: space-between;
 					width: 100%;
 					margin: 1rem 0 0 0;
@@ -440,9 +590,17 @@ html.homePage {
 					font-weight: 500;
 					font-size: 1.1rem;
 					text-align: center;
+					-webkit-transition: all 0.15s ease-in-out;
+					-o-transition: all 0.15s ease-in-out;
 					transition: all 0.15s ease-in-out;
+					display: -webkit-box;
+					display: -ms-flexbox;
 					display: flex;
+					-webkit-box-align: center;
+					-ms-flex-align: center;
 					align-items: center;
+					-webkit-box-pack: center;
+					-ms-flex-pack: center;
 					justify-content: center;
 					gap: 0.5rem;
 
@@ -450,11 +608,15 @@ html.homePage {
 						background-color: var(--primary-cl);
 						cursor: pointer;
 						border: 1px solid grey;
+						-webkit-box-shadow: 7px 5px 60px -14px var(--accent-cl);
 						box-shadow: 7px 5px 60px -14px var(--accent-cl);
 					}
 
 					&:active {
+						-webkit-transform: scale(0.97);
+						-ms-transform: scale(0.97);
 						transform: scale(0.97);
+						-webkit-box-shadow: 7px 5px 56px -10px var(--accent-cl);
 						box-shadow: 7px 5px 56px -10px var(--accent-cl);
 					}
 				}

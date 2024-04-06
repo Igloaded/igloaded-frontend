@@ -902,15 +902,15 @@ html.homePage {
 			flex-direction: column;
 			align-items: center;
 			width: 90%;
-			min-width: none;
-			background: rgba(24, 24, 24, 0.923);
+			background: rgba(201, 201, 201, 0.139);
 			box-shadow: 0 8px 32px 0
 				rgba(34, 42, 148, 0.42);
-			backdrop-filter: none;
-			-webkit-backdrop-filter: none;
+			backdrop-filter: blur(5px);
+			-webkit-backdrop-filter: blur(5px);
 			border: 1px solid rgba(255, 255, 255, 0.149);
 			border-radius: 0.5rem;
 			transition: all 0.2s ease-in-out;
+			opacity: 1;
 
 			&:hover {
 				box-shadow: 0 8px 32px 0
